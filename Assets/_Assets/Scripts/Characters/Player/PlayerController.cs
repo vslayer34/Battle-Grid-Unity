@@ -4,6 +4,12 @@ using UnityEngine;
 
 namespace BattleGridUnity.Scripts.Characters.Player
 {
+    internal enum CharacterStance
+    {
+        Standing,
+        Crouched,
+        Prone
+    }
     public class PlayerController : MonoBehaviour
     {
         [SerializeField, Header("Requried")]
@@ -26,6 +32,14 @@ namespace BattleGridUnity.Scripts.Characters.Player
         private Vector3 _moveDirection;
         private Vector3 _verticalVelocity;
 
+        // Character Controller configuerations
+        private float _controllerHeight;
+        private Vector3 _controllerCenter;
+
+        const float CROUCH_REDUCTION_RATIO = 0.5f;
+        const float PRONE_REDUCTION_RATIO = 0.25f;
+        private CharacterStance _stance = CharacterStance.Standing;
+
 
 
 
@@ -33,7 +47,12 @@ namespace BattleGridUnity.Scripts.Characters.Player
 
         private void Start()
         {
+            _controllerHeight = _characterController.height;
+            _controllerCenter = _characterController.center;
+
             _inputListener.OnMoveInputsPressed += UpdateInputVector;
+            _inputListener.OnJumpInputPressed += Jump;
+            _inputListener.OnCrouchToggled += CheckForCrouch;
         }
 
         private void Update()
@@ -52,6 +71,8 @@ namespace BattleGridUnity.Scripts.Characters.Player
             _moveDirection.z = _inputVector.y;
             _moveDirection = _moveDirection.normalized;
 
+            
+
             // if (_moveDirection != Vector3.zero)
             // {
             //     transform.forward = _moveDirection;
@@ -67,13 +88,56 @@ namespace BattleGridUnity.Scripts.Characters.Player
         private void OnDestroy()
         {
             _inputListener.OnMoveInputsPressed -= UpdateInputVector;
+            _inputListener.OnJumpInputPressed -= Jump;
+            _inputListener.OnCrouchToggled -= CheckForCrouch;
         }
 
         // Member Methods--------------------------------------------------------------------------
 
+        private void UpdateCharacterControllerConfigs(CharacterStance stance)
+        {
+            float modifier = 0.0f;
+
+            switch (stance)
+            {
+                case CharacterStance.Standing:
+                    modifier = 1.0f;
+                    break;
+
+                case CharacterStance.Crouched:
+                    modifier = CROUCH_REDUCTION_RATIO;
+                    break;
+
+                case CharacterStance.Prone:
+                    modifier = PRONE_REDUCTION_RATIO;
+                    break;
+            }
+            _characterController.height = _controllerHeight * modifier;
+            _characterController.center = _controllerCenter * modifier;
+        }
+
         // Signal Methods--------------------------------------------------------------------------
 
         private void UpdateInputVector(Vector2 vector) => _inputVector = vector;
-
+        private void Jump()
+        {
+            if (_characterController.isGrounded)
+            {
+                _verticalVelocity.y = Mathf.Sqrt(_jumpHeight * -2.0f * _gravity);
+            }
+        }
+        private void CheckForCrouch(bool toggledOn)
+        {
+            switch (toggledOn)
+            {
+                case true:
+                    UpdateCharacterControllerConfigs(CharacterStance.Crouched);
+                    break;
+                
+                case false:
+                    UpdateCharacterControllerConfigs(CharacterStance.Standing);
+                    break;
+            }
+        }
     }
 }
