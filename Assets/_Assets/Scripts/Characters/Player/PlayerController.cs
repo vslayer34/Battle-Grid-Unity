@@ -20,8 +20,10 @@ namespace BattleGridUnity.Scripts.Characters.Player
         private Vector2 _inputVector;
 
 
+        
         [SerializeField]
-        private float _characterSpeed = 5.0f;
+        private float _characterStandingSpeed = 5.0f;
+        private float _characterSpeed;
 
         [SerializeField]
         private float _jumpHeight = 1.5f;
@@ -35,6 +37,7 @@ namespace BattleGridUnity.Scripts.Characters.Player
         // Character Controller configuerations
         private float _controllerHeight;
         private Vector3 _controllerCenter;
+        private float _controllerRadius;
 
         const float CROUCH_REDUCTION_RATIO = 0.5f;
         const float PRONE_REDUCTION_RATIO = 0.25f;
@@ -47,12 +50,16 @@ namespace BattleGridUnity.Scripts.Characters.Player
 
         private void Start()
         {
+            _characterSpeed = _characterStandingSpeed;
+
             _controllerHeight = _characterController.height;
             _controllerCenter = _characterController.center;
+            _controllerRadius = _characterController.radius;
 
             _inputListener.OnMoveInputsPressed += UpdateInputVector;
             _inputListener.OnJumpInputPressed += Jump;
             _inputListener.OnCrouchToggled += CheckForCrouch;
+            _inputListener.OnProneToggled += CheckForProne;
         }
 
         private void Update()
@@ -90,6 +97,7 @@ namespace BattleGridUnity.Scripts.Characters.Player
             _inputListener.OnMoveInputsPressed -= UpdateInputVector;
             _inputListener.OnJumpInputPressed -= Jump;
             _inputListener.OnCrouchToggled -= CheckForCrouch;
+            _inputListener.OnProneToggled -= CheckForProne;
         }
 
         // Member Methods--------------------------------------------------------------------------
@@ -102,18 +110,22 @@ namespace BattleGridUnity.Scripts.Characters.Player
             {
                 case CharacterStance.Standing:
                     modifier = 1.0f;
+                    _characterController.radius = _controllerRadius;
                     break;
 
                 case CharacterStance.Crouched:
                     modifier = CROUCH_REDUCTION_RATIO;
+                    _characterController.radius = _controllerRadius;
                     break;
 
                 case CharacterStance.Prone:
                     modifier = PRONE_REDUCTION_RATIO;
+                    _characterController.radius = _controllerRadius / 2.0f;
                     break;
             }
             _characterController.height = _controllerHeight * modifier;
             _characterController.center = _controllerCenter * modifier;
+            _characterSpeed = _characterStandingSpeed * modifier;
         }
 
         // Signal Methods--------------------------------------------------------------------------
@@ -132,6 +144,20 @@ namespace BattleGridUnity.Scripts.Characters.Player
             {
                 case true:
                     UpdateCharacterControllerConfigs(CharacterStance.Crouched);
+                    break;
+                
+                case false:
+                    UpdateCharacterControllerConfigs(CharacterStance.Standing);
+                    break;
+            }
+        }
+
+        private void CheckForProne(bool toggledOn)
+        {
+            switch (toggledOn)
+            {
+                case true:
+                    UpdateCharacterControllerConfigs(CharacterStance.Prone);
                     break;
                 
                 case false:
