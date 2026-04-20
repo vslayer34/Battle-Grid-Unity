@@ -111,18 +111,22 @@ namespace BattleGridUnity.Scripts.Characters.Player
                 case CharacterStance.Standing:
                     modifier = 1.0f;
                     _characterController.radius = _controllerRadius;
+                    _stance = CharacterStance.Standing;
                     break;
 
                 case CharacterStance.Crouched:
                     modifier = CROUCH_REDUCTION_RATIO;
                     _characterController.radius = _controllerRadius;
+                    _stance = CharacterStance.Crouched;
                     break;
 
                 case CharacterStance.Prone:
                     modifier = PRONE_REDUCTION_RATIO;
                     _characterController.radius = _controllerRadius / 2.0f;
+                    _stance = CharacterStance.Prone;
                     break;
             }
+            
             _characterController.height = _controllerHeight * modifier;
             _characterController.center = _controllerCenter * modifier;
             _characterSpeed = _characterStandingSpeed * modifier;
@@ -135,9 +139,17 @@ namespace BattleGridUnity.Scripts.Characters.Player
         {
             if (_characterController.isGrounded)
             {
-                _verticalVelocity.y = Mathf.Sqrt(_jumpHeight * -2.0f * _gravity);
+                if (_stance == CharacterStance.Standing)
+                {
+                    _verticalVelocity.y = Mathf.Sqrt(_jumpHeight * -2.0f * _gravity);
+                }
+                else
+                {
+                    UpdateCharacterControllerConfigs(CharacterStance.Standing);
+                }
             }
         }
+
         private void CheckForCrouch(bool toggledOn)
         {
             switch (toggledOn)

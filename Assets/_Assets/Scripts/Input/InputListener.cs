@@ -66,7 +66,13 @@ namespace BattleGridUnity.Scripts.Input
 
         // Signal Methods--------------------------------------------------------------------------
 
-        private void OnJumpPressed(InputAction.CallbackContext context) => OnJumpInputPressed?.Invoke();
+        private void OnJumpPressed(InputAction.CallbackContext context)
+        {
+            OnJumpInputPressed?.Invoke();
+            _isCrouchedToggleOn = false;
+            _isProneToggleOn = false;
+        }
+
         private void OnCrouchTogglePressed(InputAction.CallbackContext context)
         {
             OnCrouchToggled?.Invoke(_isCrouchedToggleOn = !_isCrouchedToggleOn);
@@ -76,6 +82,7 @@ namespace BattleGridUnity.Scripts.Input
                 _isProneToggleOn = false;
             }
         }
+        
         private void OnProneTogglePressed(InputAction.CallbackContext context)
         {
             OnProneToggled?.Invoke(_isProneToggleOn = !_isProneToggleOn);
