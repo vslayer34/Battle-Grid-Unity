@@ -19,9 +19,12 @@ namespace BattleGridUnity.Scripts.Characters.Player
         private CharacterController _characterController;
         private Vector2 _inputVector;
 
+        [SerializeField]
+        private Camera _fpsCamera;
+
 
         
-        [SerializeField]
+        [SerializeField, Header("Player Movment Stats")]
         private float _characterStandingSpeed = 5.0f;
         private float _characterSpeed;
 
@@ -43,6 +46,12 @@ namespace BattleGridUnity.Scripts.Characters.Player
         const float PRONE_REDUCTION_RATIO = 0.25f;
         private CharacterStance _stance = CharacterStance.Standing;
 
+        [SerializeField, Header("Mouse Controls")]
+        private float _lookAroundSpeed = 20.0f;
+
+        [SerializeField]
+        private float _mouseSensitivity = 1.0f;
+
 
 
 
@@ -60,10 +69,13 @@ namespace BattleGridUnity.Scripts.Characters.Player
             _inputListener.OnJumpInputPressed += Jump;
             _inputListener.OnCrouchToggled += CheckForCrouch;
             _inputListener.OnProneToggled += CheckForProne;
+
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         private void Update()
         {
+            LookAround();
             if (_characterController.isGrounded)
             {
                 // Apply downward force for stability
@@ -102,6 +114,18 @@ namespace BattleGridUnity.Scripts.Characters.Player
 
         // Member Methods--------------------------------------------------------------------------
 
+        private void LookAround()
+        {
+            Debug.Log($"[Player Controller] - LookAround() Mouse Delta: {_inputListener.LookInputVector}");
+
+            if (_inputListener.LookInputVector != Vector2.zero)
+            {
+                var upWardAngle = Time.deltaTime * _inputListener.LookInputVector.y * -1.0f * _mouseSensitivity;
+                upWardAngle = Mathf.Clamp(upWardAngle, -_lookAroundSpeed, _lookAroundSpeed);
+                _fpsCamera.transform.Rotate(Vector3.right, upWardAngle);
+            }
+        }
+
         private void UpdateCharacterControllerConfigs(CharacterStance stance)
         {
             float modifier = 0.0f;
@@ -126,7 +150,7 @@ namespace BattleGridUnity.Scripts.Characters.Player
                     _stance = CharacterStance.Prone;
                     break;
             }
-            
+
             _characterController.height = _controllerHeight * modifier;
             _characterController.center = _controllerCenter * modifier;
             _characterSpeed = _characterStandingSpeed * modifier;

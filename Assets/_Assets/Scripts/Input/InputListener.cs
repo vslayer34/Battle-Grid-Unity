@@ -17,8 +17,10 @@ namespace BattleGridUnity.Scripts.Input
         private InputAction _jumpInputAction;
         private InputAction _crouchInputAction;
         private InputAction _proneInputAction;
+        private InputAction _lookInputAction;
 
-        private Vector2 _inputVector;
+        private Vector2 _movementInputVector;
+        private Vector2 _lookInputVector;
 
         private bool _isCrouchedToggleOn;
         private bool _isProneToggleOn;
@@ -36,6 +38,7 @@ namespace BattleGridUnity.Scripts.Input
             _jumpInputAction = _playerInputAction.OnFoot.Jump;
             _crouchInputAction = _playerInputAction.OnFoot.Crouch;
             _proneInputAction = _playerInputAction.OnFoot.Prone;
+            _lookInputAction = _playerInputAction.OnFoot.Look;
         }
 
         private void Start()
@@ -47,8 +50,10 @@ namespace BattleGridUnity.Scripts.Input
 
         private void Update()
         {
-            _inputVector = _moveInputAction.ReadValue<Vector2>();
-            OnMoveInputsPressed?.Invoke(_inputVector);
+            _movementInputVector = _moveInputAction.ReadValue<Vector2>();
+            _lookInputVector = _lookInputAction.ReadValue<Vector2>();
+
+            OnMoveInputsPressed?.Invoke(_movementInputVector);
         }
 
 
@@ -82,7 +87,7 @@ namespace BattleGridUnity.Scripts.Input
                 _isProneToggleOn = false;
             }
         }
-        
+
         private void OnProneTogglePressed(InputAction.CallbackContext context)
         {
             OnProneToggled?.Invoke(_isProneToggleOn = !_isProneToggleOn);
@@ -92,5 +97,9 @@ namespace BattleGridUnity.Scripts.Input
                 _isCrouchedToggleOn = false;
             }
         }
+
+        // Getters & Setters-----------------------------------------------------------------------
+
+        public Vector2 LookInputVector => _lookInputVector;
     }
 }

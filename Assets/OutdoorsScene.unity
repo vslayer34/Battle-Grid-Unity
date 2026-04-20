@@ -365,7 +365,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1823688467}
     m_Modifications:
     - target: {fileID: 100002, guid: 75dcb58506746b84db987c4ce01e99b5, type: 3}
       propertyPath: m_Name
@@ -373,15 +373,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 75dcb58506746b84db987c4ce01e99b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.6384
+      value: 0.237
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 75dcb58506746b84db987c4ce01e99b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.64938
+      value: -0.14399993
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 75dcb58506746b84db987c4ce01e99b5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.30106
+      value: 0.398
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 75dcb58506746b84db987c4ce01e99b5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -389,15 +389,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 75dcb58506746b84db987c4ce01e99b5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 75dcb58506746b84db987c4ce01e99b5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 75dcb58506746b84db987c4ce01e99b5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 75dcb58506746b84db987c4ce01e99b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -498,6 +498,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &644787470 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400002, guid: 75dcb58506746b84db987c4ce01e99b5, type: 3}
+  m_PrefabInstance: {fileID: 165018175}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &728712907
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,7 +633,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1328005563
 Transform:
   m_ObjectHideFlags: 0
@@ -825,7 +830,7 @@ GameObject:
   - component: {fileID: 1823688465}
   - component: {fileID: 1823688468}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: FPS Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -870,7 +875,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -898,12 +903,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823688464}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.25, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.808, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
+  m_Children:
+  - {fileID: 644787470}
+  m_Father: {fileID: 5037726205894802225}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1823688468
 MonoBehaviour:
@@ -1154,6 +1160,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3439620880163967627, guid: 29addf004c91e8843913c15cd1b10dc4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1328005563}
+    - targetCorrespondingSourceObject: {fileID: 3439620880163967627, guid: 29addf004c91e8843913c15cd1b10dc4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1823688467}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8175055986102442671, guid: 29addf004c91e8843913c15cd1b10dc4, type: 3}
       insertIndex: -1
@@ -1226,17 +1235,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Characters.Player.PlayerController
   _inputListener: {fileID: 5037726205894802228}
   _characterController: {fileID: 5037726205894802227}
+  _fpsCamera: {fileID: 1823688466}
   _characterStandingSpeed: 5
   _jumpHeight: 1.5
   _gravity: -9.81
+  _lookAroundSpeed: 20
+  _mouseSensitivity: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1823688467}
   - {fileID: 157207114}
   - {fileID: 432432461}
   - {fileID: 2013410475}
   - {fileID: 728712911}
   - {fileID: 5037726205894802224}
-  - {fileID: 165018175}
