@@ -117,13 +117,18 @@ namespace BattleGridUnity.Scripts.Characters.Player
 
         private void LookAround()
         {
-            Debug.Log($"[Player Controller] - LookAround() Mouse Delta: {_inputListener.LookInputVector}");
-
             if (_inputListener.LookInputVector != Vector2.zero)
             {
-                var upWardAngle = Time.deltaTime * _inputListener.LookInputVector.y * -1.0f * _mouseSensitivity * _lookAroundSpeed;
+                // var upWardAngle = Time.deltaTime * _inputListener.LookInputVector.y * -1.0f * _mouseSensitivity * _lookAroundSpeed;
+                var upWardAngle = _inputListener.LookInputVector.y * -1.0f * _mouseSensitivity * _lookAroundSpeed;
+
+                Debug.Log($"[Player Controller] - LookAround() UpwardAngle: {upWardAngle}");
+
                 upWardAngle = Mathf.Clamp(upWardAngle, -_lookAroundSpeed, _lookAroundSpeed);
-                _fpsCamera.transform.Rotate(Vector3.right, upWardAngle);
+
+                
+                _fpsCamera.transform.Rotate(Vector3.right, upWardAngle * Time.deltaTime);
+
 
                 var mouseXRotation = Time.deltaTime * _inputListener.LookInputVector.x *_mouseSensitivity * _lookAroundSpeed;
                 transform.Rotate(Vector3.up * mouseXRotation);
