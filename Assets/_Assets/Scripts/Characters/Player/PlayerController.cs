@@ -85,9 +85,9 @@ namespace BattleGridUnity.Scripts.Characters.Player
                 }
             }
 
-            _moveDirection.x = _inputVector.x;
+
+            var _moveDirection = _inputVector.y * transform.forward + _inputVector.x * transform.right;
             _moveDirection.y = 0.0f;
-            _moveDirection.z = _inputVector.y;
             _moveDirection = _moveDirection.normalized;
 
             
@@ -101,6 +101,7 @@ namespace BattleGridUnity.Scripts.Characters.Player
             _verticalVelocity.y += _gravity * Time.deltaTime;
 
             var _finalMoveDirection = _moveDirection * _characterSpeed + Vector3.up * _verticalVelocity.y;
+
             _characterController.Move(_finalMoveDirection * Time.deltaTime);
         }
 
@@ -120,9 +121,12 @@ namespace BattleGridUnity.Scripts.Characters.Player
 
             if (_inputListener.LookInputVector != Vector2.zero)
             {
-                var upWardAngle = Time.deltaTime * _inputListener.LookInputVector.y * -1.0f * _mouseSensitivity;
+                var upWardAngle = Time.deltaTime * _inputListener.LookInputVector.y * -1.0f * _mouseSensitivity * _lookAroundSpeed;
                 upWardAngle = Mathf.Clamp(upWardAngle, -_lookAroundSpeed, _lookAroundSpeed);
                 _fpsCamera.transform.Rotate(Vector3.right, upWardAngle);
+
+                var mouseXRotation = Time.deltaTime * _inputListener.LookInputVector.x *_mouseSensitivity * _lookAroundSpeed;
+                transform.Rotate(Vector3.up * mouseXRotation);
             }
         }
 
