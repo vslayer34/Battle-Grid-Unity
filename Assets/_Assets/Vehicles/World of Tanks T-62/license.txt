@@ -1,0 +1,11 @@
+Model Information:
+* title:	World of Tanks_T-62
+* source:	https://sketchfab.com/3d-models/world-of-tanks-t-62-dd6c6e8d87f44ebbb53a4e2c6fb90e33
+* author:	Marina.Kardava (https://sketchfab.com/Marina.Kardava)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "World of Tanks_T-62" (https://sketchfab.com/3d-models/world-of-tanks-t-62-dd6c6e8d87f44ebbb53a4e2c6fb90e33) by Marina.Kardava (https://sketchfab.com/Marina.Kardava) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
