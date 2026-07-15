@@ -1,0 +1,11 @@
+Model Information:
+* title:	T-72B3M Obr. 2022
+* source:	https://sketchfab.com/3d-models/t-72b3m-obr-2022-b821cd7b4cf9482598e1d603790f9293
+* author:	42manako (https://sketchfab.com/42manako)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "T-72B3M Obr. 2022" (https://sketchfab.com/3d-models/t-72b3m-obr-2022-b821cd7b4cf9482598e1d603790f9293) by 42manako (https://sketchfab.com/42manako) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
