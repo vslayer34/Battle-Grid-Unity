@@ -1,0 +1,11 @@
+Model Information:
+* title:	BTR-82A
+* source:	https://sketchfab.com/3d-models/btr-82a-5c10df6da4154042a481fe89fd688fdb
+* author:	42manako (https://sketchfab.com/42manako)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "BTR-82A" (https://sketchfab.com/3d-models/btr-82a-5c10df6da4154042a481fe89fd688fdb) by 42manako (https://sketchfab.com/42manako) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
