@@ -101,56 +101,18 @@ namespace BattleGridUnity.Scripts.Vehicles
             _turret.Rotate(Vector3.up, _turretRotation);
 
             float _gunRotation = _groundInput.LookInputVector.y * -1.0f * _mouseSensitivity * _vehicleStats.GunRotationSpeed * Time.deltaTime;
-            // _gunRotation = Mathf.Clamp(_gunRotation, -_vehicleStats.MaxMainGunAngle * Mathf.Deg2Rad, _vehicleStats.MinMainGunAngle * Mathf.Deg2Rad);
-
-            // if (_mantlet.localRotation.x < _vehicleStats.MinMainGunAngle * Mathf.Deg2Rad && _mantlet.localRotation.x > -_vehicleStats.MaxMainGunAngle * Mathf.Deg2Rad)
-            // {
-            //     _mantlet.Rotate(Vector3.right, _gunRotation);
-            // }
-
-            // Debug.Log($"Main Gun angle: {_gunRotation}");
-
-            // _mantlet.Rotate(Vector3.right, _gunRotation);
-
-            // Debug.Log($"Mouse Input Vector {_mantlet.localRotation.x}");
-            // float xRotation = Mathf.Clamp(_mantlet.localRotation.x * Mathf.Rad2Deg, -_vehicleStats.MaxMainGunAngle, _vehicleStats.MinMainGunAngle);
             float xRotation = Mathf.Clamp(_gunRotation * Mathf.Rad2Deg, -_vehicleStats.MaxMainGunAngle, _vehicleStats.MinMainGunAngle);
-            Debug.Log($"Main Gun angle: {xRotation}");
-            
-            if (_gunRotation != 0.0f)
-            {
-                // _mantlet.localRotation *= Quaternion.Euler(_gunRotation * Time.deltaTime, 0.0f, 0.0f);
-            }
 
-            if (_mantlet.localRotation.x >= _vehicleStats.MinMainGunAngle * Mathf.Deg2Rad)
+            if (_mantlet.localRotation.x * Mathf.Rad2Deg * 2.0f >= _vehicleStats.MinMainGunAngle)
             {
                 _mantlet.localRotation = Quaternion.Euler(_vehicleStats.MinMainGunAngle, 0.0f, 0.0f);
             }
-            else if (_mantlet.localRotation.x <= -_vehicleStats.MaxMainGunAngle * Mathf.Deg2Rad)
+            else if (_mantlet.localRotation.x * Mathf.Rad2Deg * 2.0f <= -_vehicleStats.MaxMainGunAngle)
             {
                 _mantlet.localRotation = Quaternion.Euler(-_vehicleStats.MaxMainGunAngle, 0.0f, 0.0f);
             }
 
             _mantlet.Rotate(Vector3.right, _gunRotation);
-
-            // else
-            // {
-            //     // _mantlet.Rotate(Vector3.right, _gunRotation);
-            // }
-
-            // _mantlet.localRotation = Quaternion.Euler(xRotation, 0.0f, 0.0f);
-
-
-            // _mantlet.Rotate(Vector3.right, _gunRotation);
-
-            // if (_mantlet.rotation.x > _vehicleStats.MinMainGunAngle)
-            // {
-            //     _mantlet.rotation = Quaternion.Euler(_vehicleStats.MinMainGunAngle, 0.0f, 0.0f);
-            // }
-            // if (_mantlet.rotation.x < -_vehicleStats.MaxMainGunAngle * Mathf.Deg2Rad)
-            // {
-            //     _mantlet.rotation = Quaternion.Euler(-_vehicleStats.MaxMainGunAngle, 0.0f, 0.0f);
-            // }
         }
 
         // Signal Methods--------------------------------------------------------------------------
