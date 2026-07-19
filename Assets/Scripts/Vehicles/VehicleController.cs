@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using BattleGridUnity.Scripts.Vehicles.Ground;
 using Unity.Cinemachine;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace BattleGridUnity.Scripts.Vehicles
@@ -28,7 +29,13 @@ namespace BattleGridUnity.Scripts.Vehicles
     public class VehicleController : MonoBehaviour
     {
         [SerializeField]
+        private GroundVehicleStats _vehicleStats;
+
+
+        [SerializeField]
         private GroundVehicleInput _groundInput;
+
+        private float _mouseSensitivity = 1.0f;
 
         private CameraType _cameraType = CameraType.FpsCamera;
 
@@ -39,14 +46,27 @@ namespace BattleGridUnity.Scripts.Vehicles
         private List<AvailableCameras> _availableCameras;
 
 
+        [SerializeField, Header("Turret")]
+        private Transform _turret;
+
+        [SerializeField]
+        private Transform _mantlet;
+
+
 
         // Game Loop Methods-----------------------------------------------------------------------
 
         private void OnEnable()
         {
             ActivateCamera();
+            Cursor.lockState = CursorLockMode.Locked;
 
             _groundInput.OnCameraSwitchToggled += SwitchCamera;
+        }
+
+        private void Update()
+        {
+            LookAround();
         }
 
         private void OnDisable()
@@ -72,6 +92,65 @@ namespace BattleGridUnity.Scripts.Vehicles
                     item.Camera.SetActive(false);
                 }
             }
+        }
+
+        private void LookAround()
+        {
+            
+            float _turretRotation = Time.deltaTime * _groundInput.LookInputVector.x * _mouseSensitivity * _vehicleStats.TurretRotationSpeed;
+            _turret.Rotate(Vector3.up, _turretRotation);
+
+            float _gunRotation = _groundInput.LookInputVector.y * -1.0f * _mouseSensitivity * _vehicleStats.GunRotationSpeed * Time.deltaTime;
+            // _gunRotation = Mathf.Clamp(_gunRotation, -_vehicleStats.MaxMainGunAngle * Mathf.Deg2Rad, _vehicleStats.MinMainGunAngle * Mathf.Deg2Rad);
+
+            // if (_mantlet.localRotation.x < _vehicleStats.MinMainGunAngle * Mathf.Deg2Rad && _mantlet.localRotation.x > -_vehicleStats.MaxMainGunAngle * Mathf.Deg2Rad)
+            // {
+            //     _mantlet.Rotate(Vector3.right, _gunRotation);
+            // }
+
+            // Debug.Log($"Main Gun angle: {_gunRotation}");
+
+            // _mantlet.Rotate(Vector3.right, _gunRotation);
+
+            // Debug.Log($"Mouse Input Vector {_mantlet.localRotation.x}");
+            // float xRotation = Mathf.Clamp(_mantlet.localRotation.x * Mathf.Rad2Deg, -_vehicleStats.MaxMainGunAngle, _vehicleStats.MinMainGunAngle);
+            float xRotation = Mathf.Clamp(_gunRotation * Mathf.Rad2Deg, -_vehicleStats.MaxMainGunAngle, _vehicleStats.MinMainGunAngle);
+            Debug.Log($"Main Gun angle: {xRotation}");
+            
+            if (_gunRotation != 0.0f)
+            {
+                // _mantlet.localRotation *= Quaternion.Euler(_gunRotation * Time.deltaTime, 0.0f, 0.0f);
+            }
+
+            if (_mantlet.localRotation.x >= _vehicleStats.MinMainGunAngle * Mathf.Deg2Rad)
+            {
+                _mantlet.localRotation = Quaternion.Euler(_vehicleStats.MinMainGunAngle, 0.0f, 0.0f);
+            }
+            else if (_mantlet.localRotation.x <= -_vehicleStats.MaxMainGunAngle * Mathf.Deg2Rad)
+            {
+                _mantlet.localRotation = Quaternion.Euler(-_vehicleStats.MaxMainGunAngle, 0.0f, 0.0f);
+            }
+
+            _mantlet.Rotate(Vector3.right, _gunRotation);
+
+            // else
+            // {
+            //     // _mantlet.Rotate(Vector3.right, _gunRotation);
+            // }
+
+            // _mantlet.localRotation = Quaternion.Euler(xRotation, 0.0f, 0.0f);
+
+
+            // _mantlet.Rotate(Vector3.right, _gunRotation);
+
+            // if (_mantlet.rotation.x > _vehicleStats.MinMainGunAngle)
+            // {
+            //     _mantlet.rotation = Quaternion.Euler(_vehicleStats.MinMainGunAngle, 0.0f, 0.0f);
+            // }
+            // if (_mantlet.rotation.x < -_vehicleStats.MaxMainGunAngle * Mathf.Deg2Rad)
+            // {
+            //     _mantlet.rotation = Quaternion.Euler(-_vehicleStats.MaxMainGunAngle, 0.0f, 0.0f);
+            // }
         }
 
         // Signal Methods--------------------------------------------------------------------------

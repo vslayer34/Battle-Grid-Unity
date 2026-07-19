@@ -13,6 +13,8 @@ namespace BattleGridUnity.Scripts.Vehicles.Ground
 
 
         private InputAction _switchCamera;
+        private InputAction _lookInputAction;
+        private Vector2 _lookInputVector;
 
 
 
@@ -25,11 +27,17 @@ namespace BattleGridUnity.Scripts.Vehicles.Ground
 
             _groundVehiclesAction = _playerInputAction.GroundVehicle;
             _switchCamera = _groundVehiclesAction.SwitchCamera;
+            _lookInputAction = _groundVehiclesAction.Look;
         }
 
         private void Start()
         {
             _switchCamera.performed += OnSwitchCameraTogglePressed;
+        }
+
+        private void Update()
+        {
+            _lookInputVector = _lookInputAction.ReadValue<Vector2>();
         }
 
         private void OnDisable()
@@ -43,5 +51,9 @@ namespace BattleGridUnity.Scripts.Vehicles.Ground
         // Member Methods--------------------------------------------------------------------------
 
         private void OnSwitchCameraTogglePressed(InputAction.CallbackContext context) => OnCameraSwitchToggled?.Invoke();
+
+        // Getters and Setters---------------------------------------------------------------------
+
+        public Vector2 LookInputVector => _lookInputVector;
     }
 }

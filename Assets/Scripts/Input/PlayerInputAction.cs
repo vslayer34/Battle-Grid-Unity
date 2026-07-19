@@ -245,7 +245,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
             ""id"": ""c5ea6ff9-3ea5-424c-8b8f-061651b56827"",
             ""actions"": [
                 {
-                    ""name"": ""New action"",
+                    ""name"": ""Basic Movement"",
                     ""type"": ""Value"",
                     ""id"": ""0912d73a-d18f-49c8-aee3-2f4d932b4754"",
                     ""expectedControlType"": """",
@@ -261,6 +261,15 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Look"",
+                    ""type"": ""Value"",
+                    ""id"": ""e53bfa27-d906-4dfb-a59a-8be6feb8dd18"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -271,7 +280,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""Basic Movement"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -282,7 +291,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""Basic Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -293,7 +302,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""Basic Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -304,7 +313,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""Basic Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -315,7 +324,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""Basic Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -327,6 +336,17 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""SwitchCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""030b5ea9-d645-426e-81ab-1a9ed56e87b8"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -361,8 +381,9 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
         m_OnFoot_Look = m_OnFoot.FindAction("Look", throwIfNotFound: true);
         // GroundVehicle
         m_GroundVehicle = asset.FindActionMap("GroundVehicle", throwIfNotFound: true);
-        m_GroundVehicle_Newaction = m_GroundVehicle.FindAction("New action", throwIfNotFound: true);
+        m_GroundVehicle_BasicMovement = m_GroundVehicle.FindAction("Basic Movement", throwIfNotFound: true);
         m_GroundVehicle_SwitchCamera = m_GroundVehicle.FindAction("SwitchCamera", throwIfNotFound: true);
+        m_GroundVehicle_Look = m_GroundVehicle.FindAction("Look", throwIfNotFound: true);
     }
 
     ~@PlayerInputAction()
@@ -584,8 +605,9 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
     // GroundVehicle
     private readonly InputActionMap m_GroundVehicle;
     private List<IGroundVehicleActions> m_GroundVehicleActionsCallbackInterfaces = new List<IGroundVehicleActions>();
-    private readonly InputAction m_GroundVehicle_Newaction;
+    private readonly InputAction m_GroundVehicle_BasicMovement;
     private readonly InputAction m_GroundVehicle_SwitchCamera;
+    private readonly InputAction m_GroundVehicle_Look;
     /// <summary>
     /// Provides access to input actions defined in input action map "GroundVehicle".
     /// </summary>
@@ -598,13 +620,17 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
         /// </summary>
         public GroundVehicleActions(@PlayerInputAction wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "GroundVehicle/Newaction".
+        /// Provides access to the underlying input action "GroundVehicle/BasicMovement".
         /// </summary>
-        public InputAction @Newaction => m_Wrapper.m_GroundVehicle_Newaction;
+        public InputAction @BasicMovement => m_Wrapper.m_GroundVehicle_BasicMovement;
         /// <summary>
         /// Provides access to the underlying input action "GroundVehicle/SwitchCamera".
         /// </summary>
         public InputAction @SwitchCamera => m_Wrapper.m_GroundVehicle_SwitchCamera;
+        /// <summary>
+        /// Provides access to the underlying input action "GroundVehicle/Look".
+        /// </summary>
+        public InputAction @Look => m_Wrapper.m_GroundVehicle_Look;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -631,12 +657,15 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_GroundVehicleActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_GroundVehicleActionsCallbackInterfaces.Add(instance);
-            @Newaction.started += instance.OnNewaction;
-            @Newaction.performed += instance.OnNewaction;
-            @Newaction.canceled += instance.OnNewaction;
+            @BasicMovement.started += instance.OnBasicMovement;
+            @BasicMovement.performed += instance.OnBasicMovement;
+            @BasicMovement.canceled += instance.OnBasicMovement;
             @SwitchCamera.started += instance.OnSwitchCamera;
             @SwitchCamera.performed += instance.OnSwitchCamera;
             @SwitchCamera.canceled += instance.OnSwitchCamera;
+            @Look.started += instance.OnLook;
+            @Look.performed += instance.OnLook;
+            @Look.canceled += instance.OnLook;
         }
 
         /// <summary>
@@ -648,12 +677,15 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
         /// <seealso cref="GroundVehicleActions" />
         private void UnregisterCallbacks(IGroundVehicleActions instance)
         {
-            @Newaction.started -= instance.OnNewaction;
-            @Newaction.performed -= instance.OnNewaction;
-            @Newaction.canceled -= instance.OnNewaction;
+            @BasicMovement.started -= instance.OnBasicMovement;
+            @BasicMovement.performed -= instance.OnBasicMovement;
+            @BasicMovement.canceled -= instance.OnBasicMovement;
             @SwitchCamera.started -= instance.OnSwitchCamera;
             @SwitchCamera.performed -= instance.OnSwitchCamera;
             @SwitchCamera.canceled -= instance.OnSwitchCamera;
+            @Look.started -= instance.OnLook;
+            @Look.performed -= instance.OnLook;
+            @Look.canceled -= instance.OnLook;
         }
 
         /// <summary>
@@ -751,12 +783,12 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
     public interface IGroundVehicleActions
     {
         /// <summary>
-        /// Method invoked when associated input action "New action" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Basic Movement" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnBasicMovement(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "SwitchCamera" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
@@ -764,5 +796,12 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSwitchCamera(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Look" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLook(InputAction.CallbackContext context);
     }
 }

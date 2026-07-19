@@ -159,7 +159,7 @@
             "id": "c5ea6ff9-3ea5-424c-8b8f-061651b56827",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Basic Movement",
                     "type": "Value",
                     "id": "0912d73a-d18f-49c8-aee3-2f4d932b4754",
                     "expectedControlType": "",
@@ -175,6 +175,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Look",
+                    "type": "Value",
+                    "id": "e53bfa27-d906-4dfb-a59a-8be6feb8dd18",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -185,7 +194,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Basic Movement",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -196,7 +205,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Basic Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -207,7 +216,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Basic Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -218,7 +227,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Basic Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -229,7 +238,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Basic Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -241,6 +250,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "SwitchCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "030b5ea9-d645-426e-81ab-1a9ed56e87b8",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

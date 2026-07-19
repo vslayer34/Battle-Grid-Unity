@@ -115,12 +115,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 490245181093532631}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.00000032782555, y: 0.00000005697686, z: -0.00000011944155, w: 1}
-  m_LocalPosition: {x: -0.7568647, y: -0.17223649, z: 2.6040654}
+  m_LocalRotation: {x: 0.00000032782555, y: 0.00000005697686, z: -0.00000011944157, w: 1}
+  m_LocalPosition: {x: -0.6453565, y: 0.24590558, z: 0.73365784}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7447234224762005460}
+  m_Father: {fileID: 939305124072519285}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6644307791473529089
 MonoBehaviour:
@@ -760,6 +760,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8437693126745003654}
+  - {fileID: 4224325513093093812}
   m_Father: {fileID: 7447234224762005460}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3962274847124463965
@@ -852,7 +853,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 939305124072519285}
-  - {fileID: 4224325513093093812}
   m_Father: {fileID: 606855706991948477}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8822812048954309827
@@ -1800,6 +1800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe665115bc8e73438175ae6b85abc1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VehicleController
+  _vehicleStats: {fileID: 11400000, guid: 1811686edd28c7f42b53bbb67fc513b4, type: 2}
   _groundInput: {fileID: 4491191030426608789}
   _cinemachineBrain: {fileID: 690073592124542641}
   _availableCameras:
@@ -1809,6 +1810,8 @@ MonoBehaviour:
   - <Type>k__BackingField: 1
     <Camera>k__BackingField: {fileID: 4955085786855133437}
     <BlendTime>k__BackingField: 2
+  _turret: {fileID: 7447234224762005460}
+  _mantlet: {fileID: 939305124072519285}
 --- !u!114 &4491191030426608789
 MonoBehaviour:
   m_ObjectHideFlags: 0
