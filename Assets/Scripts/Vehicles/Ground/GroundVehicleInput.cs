@@ -14,7 +14,9 @@ namespace BattleGridUnity.Scripts.Vehicles.Ground
 
         private InputAction _switchCamera;
         private InputAction _lookInputAction;
+        private InputAction _movementInputAction;
         private Vector2 _lookInputVector;
+        private Vector2 _movementInputVector;
 
 
 
@@ -28,6 +30,7 @@ namespace BattleGridUnity.Scripts.Vehicles.Ground
             _groundVehiclesAction = _playerInputAction.GroundVehicle;
             _switchCamera = _groundVehiclesAction.SwitchCamera;
             _lookInputAction = _groundVehiclesAction.Look;
+            _movementInputAction = _groundVehiclesAction.BasicMovement;
         }
 
         private void Start()
@@ -38,6 +41,7 @@ namespace BattleGridUnity.Scripts.Vehicles.Ground
         private void Update()
         {
             _lookInputVector = _lookInputAction.ReadValue<Vector2>();
+            _movementInputVector = _movementInputAction.ReadValue<Vector2>();
         }
 
         private void OnDisable()
@@ -55,5 +59,6 @@ namespace BattleGridUnity.Scripts.Vehicles.Ground
         // Getters and Setters---------------------------------------------------------------------
 
         public Vector2 LookInputVector => _lookInputVector;
+        public Vector2 MovementInputVector => _movementInputVector;
     }
 }

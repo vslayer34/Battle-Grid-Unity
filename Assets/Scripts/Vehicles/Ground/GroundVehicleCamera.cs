@@ -101,15 +101,15 @@ namespace BattleGridUnity.Scripts.Vehicles.Ground
             _turret.Rotate(Vector3.up, _turretRotation);
 
             float _gunRotation = _groundInput.LookInputVector.y * -1.0f * _mouseSensitivity * _vehicleStats.GunRotationSpeed * Time.deltaTime;
-            float xRotation = Mathf.Clamp(_gunRotation * Mathf.Rad2Deg, -_vehicleStats.MaxMainGunAngle, _vehicleStats.MinMainGunAngle);
+            float xRotation = Mathf.Clamp(_gunRotation * Mathf.Rad2Deg, -_vehicleStats.MaxElevationMainGunAngle, _vehicleStats.MinDepressionMainGunAngle);
 
-            if (_mantlet.localRotation.x * Mathf.Rad2Deg * 2.0f >= _vehicleStats.MinMainGunAngle)
+            if (_mantlet.localRotation.x * Mathf.Rad2Deg * 2.0f >= _vehicleStats.MinDepressionMainGunAngle)
             {
-                _mantlet.localRotation = Quaternion.Euler(_vehicleStats.MinMainGunAngle, 0.0f, 0.0f);
+                _mantlet.localRotation = Quaternion.Euler(_vehicleStats.MinDepressionMainGunAngle, 0.0f, 0.0f);
             }
-            else if (_mantlet.localRotation.x * Mathf.Rad2Deg * 2.0f <= -_vehicleStats.MaxMainGunAngle)
+            else if (_mantlet.localRotation.x * Mathf.Rad2Deg * 2.0f <= -_vehicleStats.MaxElevationMainGunAngle)
             {
-                _mantlet.localRotation = Quaternion.Euler(-_vehicleStats.MaxMainGunAngle, 0.0f, 0.0f);
+                _mantlet.localRotation = Quaternion.Euler(-_vehicleStats.MaxElevationMainGunAngle, 0.0f, 0.0f);
             }
 
             _mantlet.Rotate(Vector3.right, _gunRotation);

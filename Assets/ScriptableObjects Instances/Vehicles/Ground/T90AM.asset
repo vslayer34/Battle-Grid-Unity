@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: T90AM
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.GroundVehicleStats
   <TurretRotationSpeed>k__BackingField: 5
+  <HullRotationSpeed>k__BackingField: 250
   <GunRotationSpeed>k__BackingField: 1
-  <MaxMainGunAngle>k__BackingField: 14
-  <MinMainGunAngle>k__BackingField: 6
+  <MaxElevationMainGunAngle>k__BackingField: 14
+  <MinDepressionMainGunAngle>k__BackingField: 6
