@@ -63,7 +63,7 @@ namespace BattleGridUnity.Scripts.Vehicles
                 }
                 else
                 {
-                    speed = _vehicleStats.BackwardSpeed;
+                    speed = -_vehicleStats.BackwardSpeed;
                 }
                 _rigidBody.AddRelativeForce(speed * Vector3.forward * Time.deltaTime, ForceMode.Acceleration);
             }

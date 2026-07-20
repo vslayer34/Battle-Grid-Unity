@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.GroundVehicleStats
   <TurretRotationSpeed>k__BackingField: 5
   <HullRotationSpeed>k__BackingField: 250
-  <ForwardSpeed>k__BackingField: 1000
+  <ForwardSpeed>k__BackingField: 2000
   <BackwardSpeed>k__BackingField: 750
   <GunRotationSpeed>k__BackingField: 1
   <MaxElevationMainGunAngle>k__BackingField: 14
