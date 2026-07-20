@@ -1796,7 +1796,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7261270902252819701}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abe665115bc8e73438175ae6b85abc1e, type: 3}
   m_Name: 
@@ -1805,6 +1805,7 @@ MonoBehaviour:
   _groundInput: {fileID: 4491191030426608789}
   _turret: {fileID: 7447234224762005460}
   _mantlet: {fileID: 939305124072519285}
+  _rigidBody: {fileID: 1197790438400727444}
 --- !u!114 &4491191030426608789
 MonoBehaviour:
   m_ObjectHideFlags: 0

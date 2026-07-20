@@ -879,11 +879,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1963925460 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 1197790438400727444, guid: 57aea38f91c96344c934767a951ce240, type: 3}
-  m_PrefabInstance: {fileID: 6917621629505439025}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2013410473
 GameObject:
   m_ObjectHideFlags: 1
@@ -1263,14 +1258,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: T90AM
       objectReference: {fileID: 0}
-    - target: {fileID: 7737212213834233800, guid: 57aea38f91c96344c934767a951ce240, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7737212213834233800, guid: 57aea38f91c96344c934767a951ce240, type: 3}
-      propertyPath: _rigidBody
-      value: 
-      objectReference: {fileID: 1963925460}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
