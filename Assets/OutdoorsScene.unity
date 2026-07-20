@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &108531496 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 490245181093532631, guid: 57aea38f91c96344c934767a951ce240, type: 3}
+  m_PrefabInstance: {fileID: 6917621629505439025}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &157207112
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,6 +717,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29addf004c91e8843913c15cd1b10dc4, type: 3}
+--- !u!4 &1284792160 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 939305124072519285, guid: 57aea38f91c96344c934767a951ce240, type: 3}
+  m_PrefabInstance: {fileID: 6917621629505439025}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1399074177 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7447234224762005460, guid: 57aea38f91c96344c934767a951ce240, type: 3}
@@ -889,6 +899,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1761134112 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 690073592124542641, guid: 57aea38f91c96344c934767a951ce240, type: 3}
+  m_PrefabInstance: {fileID: 6917621629505439025}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineBrain
 --- !u!1 &1846338919 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5711648393893399821, guid: 57aea38f91c96344c934767a951ce240, type: 3}
@@ -907,6 +928,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineRotateWithFollowTarget
   Damping: 0
+--- !u!1 &1963925457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7261270902252819701, guid: 57aea38f91c96344c934767a951ce240, type: 3}
+  m_PrefabInstance: {fileID: 6917621629505439025}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1963925458 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4491191030426608789, guid: 57aea38f91c96344c934767a951ce240, type: 3}
+  m_PrefabInstance: {fileID: 6917621629505439025}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963925457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26c1c2f707d87674ca4e27954acc02df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GroundVehicleInput
+--- !u!114 &1963925462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963925457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb37b3e8a66f314bb9eb5f3bb629454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.GroundVehicleCamera
+  _vehicleStats: {fileID: 11400000, guid: 1811686edd28c7f42b53bbb67fc513b4, type: 2}
+  _groundInput: {fileID: 1963925458}
+  _cinemachineBrain: {fileID: 1761134112}
+  _availableCameras:
+  - <Type>k__BackingField: 0
+    <Camera>k__BackingField: {fileID: 108531496}
+    <BlendTime>k__BackingField: 1
+  - <Type>k__BackingField: 1
+    <Camera>k__BackingField: {fileID: 1587040682}
+    <BlendTime>k__BackingField: 2
+  _turret: {fileID: 1399074177}
+  _mantlet: {fileID: 1284792160}
 --- !u!1 &2013410473
 GameObject:
   m_ObjectHideFlags: 1
@@ -1343,6 +1404,10 @@ PrefabInstance:
       value: T90AM
       objectReference: {fileID: 0}
     - target: {fileID: 7737212213834233800, guid: 57aea38f91c96344c934767a951ce240, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7737212213834233800, guid: 57aea38f91c96344c934767a951ce240, type: 3}
       propertyPath: _availableCameras.Array.data[1].<Camera>k__BackingField
       value: 
       objectReference: {fileID: 1587040682}
@@ -1391,6 +1456,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7261270902252819701, guid: 57aea38f91c96344c934767a951ce240, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1963925462}
     - targetCorrespondingSourceObject: {fileID: 5711648393893399821, guid: 57aea38f91c96344c934767a951ce240, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1846338924}
