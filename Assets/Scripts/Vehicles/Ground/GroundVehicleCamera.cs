@@ -48,6 +48,12 @@ namespace BattleGridUnity.Scripts.Vehicles.Ground
         private Transform _turret;
 
         [SerializeField]
+        private Transform _cameraLookTarget;
+
+        [SerializeField]
+        private float _cameraRotationSpeed = 10.0f;
+
+        [SerializeField]
         private Transform _mantlet;
 
 
@@ -97,8 +103,31 @@ namespace BattleGridUnity.Scripts.Vehicles.Ground
         private void LookAround()
         {
             
-            float _turretRotation = Time.deltaTime * _groundInput.LookInputVector.x * _mouseSensitivity * _vehicleStats.TurretRotationSpeed;
-            _turret.Rotate(Vector3.up, _turretRotation);
+            float _cameraRotation = Time.deltaTime * _groundInput.LookInputVector.x * _mouseSensitivity * _cameraRotationSpeed;
+            _cameraLookTarget.Rotate(Vector3.up, _cameraRotation);
+            // _turret.localRotation *= Quaternion.Euler(0.0f, _turretRotation, 0.0f);
+            
+            // if (_groundInput.LookInputVector.x != 0.0f)
+            // {
+            //     float direction = _groundInput.LookInputVector.x > 0 ? 1 : -1;
+            //     float turretRotaion = Time.deltaTime * direction * _vehicleStats.TurretRotationSpeed;
+
+            //     if (_cameraType == CameraType.FpsCamera)
+            //     {
+            //         _turret.localRotation *= Quaternion.Euler(0.0f, turretRotaion, 0.0f);
+            //     }
+            // }
+            if (_cameraType == CameraType.FpsCamera && _groundInput.LookInputVector.x != 0.0f)
+            {
+                float direction = _groundInput.LookInputVector.x > 0 ? 1 : -1;
+                float turretRotaion = Time.deltaTime * direction * _vehicleStats.TurretRotationSpeed;
+
+                _turret.localRotation *= Quaternion.Euler(0.0f, turretRotaion, 0.0f);
+            }
+            else if (_cameraType == CameraType.ThirdPersonCamera)
+            {
+                _turret.localRotation = Quaternion.RotateTowards(_turret.localRotation, _cameraLookTarget.localRotation, Time.deltaTime * _vehicleStats.TurretRotationSpeed);
+            }
 
             float _gunRotation = _groundInput.LookInputVector.y * -1.0f * _mouseSensitivity * _vehicleStats.GunRotationSpeed * Time.deltaTime;
             float xRotation = Mathf.Clamp(_gunRotation * Mathf.Rad2Deg, -_vehicleStats.MaxElevationMainGunAngle, _vehicleStats.MinDepressionMainGunAngle);

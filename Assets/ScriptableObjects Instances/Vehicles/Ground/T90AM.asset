@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0872400863fa1014e80b58f714acee78, type: 3}
   m_Name: T90AM
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.GroundVehicleStats
-  <TurretRotationSpeed>k__BackingField: 5
+  <TurretRotationSpeed>k__BackingField: 40
   <HullRotationSpeed>k__BackingField: 250
   <ForwardSpeed>k__BackingField: 2000
   <BackwardSpeed>k__BackingField: 750
