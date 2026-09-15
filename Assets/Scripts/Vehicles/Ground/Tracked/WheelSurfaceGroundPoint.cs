@@ -11,13 +11,16 @@ namespace BattleGridUnity.Scripts.Vehicles.Ground.Tracked
         // [SerializeField]
         public Vector3 WheelGroundPoint { get; private set; }
 
+        [SerializeField]
+        private Vector3 _offset = Vector3.zero;
+
 
 
         // Game Loop Methods-----------------------------------------------------------------------
 
         private void Update()
         {
-            WheelGroundPoint = transform.position + (_wheelRadius * Vector3.down);
+            WheelGroundPoint = transform.position + (_wheelRadius * Vector3.down) + _offset;
         }
 
         private void OnDrawGizmos()

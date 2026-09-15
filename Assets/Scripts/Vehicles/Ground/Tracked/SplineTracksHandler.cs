@@ -30,23 +30,36 @@ namespace BattleGridUnity.Scripts.Vehicles.Ground.Tracked
 
         private void Update()
         {
-            UpdateSplinePointsLocationsToWheels();
+            // for (int i = 0; i < _splineGroundPoints.Count; i++)
+            {
+                UpdateSplinePointsLocationsToWheels(0);
+                UpdateSplinePointsLocationsToWheels(1);
+                UpdateSplinePointsLocationsToWheels(2);
+                UpdateSplinePointsLocationsToWheels(3);
+                UpdateSplinePointsLocationsToWheels(4);
+                UpdateSplinePointsLocationsToWheels(5);
+                // UpdateSplinePointsLocationsToWheels(1);
+                // UpdateSplinePointsLocationsToWheels(0);
+                // UpdateSplinePointsLocationsToWheels(0);
+            }
         }
 
         // Member Methods--------------------------------------------------------------------------
 
-        private void UpdateSplinePointsLocationsToWheels()
+        private void UpdateSplinePointsLocationsToWheels(int index = 0)
         {
             // print($"Spline point 0 position {_trackSpline.transform.TransformPoint(_spline[_splineGroundPoints[0]].Position)}");
             // Vector3 knotWorldPosition = _trackSpline.transform.TransformPoint(_spline[_splineGroundPoints[0]].Position);
 
-            Vector3 localKnotPosition = _trackSpline.transform.InverseTransformPoint(_corespondingWheels[0].WheelGroundPoint);
+            Vector3 localKnotPosition = _trackSpline.transform.InverseTransformPoint(_corespondingWheels[index].WheelGroundPoint);
 
-            var testKnot = _spline[_splineGroundPoints[0]];
+
+            var testKnot = _spline[_splineGroundPoints[index]];
+            // var testKnot = _spline[index];
 
             testKnot.Position = (float3)localKnotPosition;
 
-            _spline.SetKnot(_splineGroundPoints[0], testKnot);
+            _spline.SetKnot(_splineGroundPoints[index], testKnot);
             
             // for (int i = 0; i < _splineGroundPoints.Count; i++)
             // {

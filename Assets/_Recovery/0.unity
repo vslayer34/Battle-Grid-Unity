@@ -849,7 +849,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.Tracked.WheelSurfaceGroundPoint
   _wheelRadius: 0.62
-  _offset: {x: -0.12, y: 0, z: 0}
 --- !u!114 &1037245668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -863,7 +862,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.Tracked.WheelSurfaceGroundPoint
   _wheelRadius: 0.62
-  _offset: {x: -0.12, y: 0, z: 0}
 --- !u!114 &1037245669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -877,7 +875,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.Tracked.WheelSurfaceGroundPoint
   _wheelRadius: 0.62
-  _offset: {x: -0.12, y: 0, z: 0}
 --- !u!114 &1037245670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -891,7 +888,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.Tracked.WheelSurfaceGroundPoint
   _wheelRadius: 0.62
-  _offset: {x: -0.12, y: 0, z: 0}
 --- !u!114 &1037245671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -905,7 +901,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.Tracked.WheelSurfaceGroundPoint
   _wheelRadius: 0.62
-  _offset: {x: -0.12, y: 0, z: 0}
 --- !u!1001 &1166750425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1183,35 +1178,35 @@ MonoBehaviour:
       TangentIn:
         x: -0
         y: -0
-        z: -0.20876053
+        z: -0.2090029
       TangentOut:
         x: 0
         y: 0
-        z: 0.38614807
+        z: 0.38693637
       Rotation:
         value:
-          x: 0.9106818
-          y: 0.028572418
-          z: 0.0032944954
-          w: 0.41210613
+          x: 0.91016406
+          y: 0.032797977
+          z: 0.02127927
+          w: 0.41239902
     - Position:
-        x: 0.072784424
+        x: 0.19277954
         y: -1.5684872
         z: 8.186111
       TangentIn:
         x: -0
         y: -0
-        z: -0.5431264
+        z: -0.5429267
       TangentOut:
         x: 0
         y: 0
-        z: 0.5052049
+        z: 0.50545985
       Rotation:
         value:
-          x: 0.99073446
-          y: -0.0088836495
-          z: -0.0022352005
-          w: 0.13550405
+          x: 0.99070364
+          y: -0.00921014
+          z: -0.0049462486
+          w: 0.13563521
     - Position:
         x: 0.06604004
         y: -1.6017818
@@ -1219,17 +1214,17 @@ MonoBehaviour:
       TangentIn:
         x: -0
         y: -0
-        z: -0.47802842
+        z: -0.47882015
       TangentOut:
         x: 0
         y: 0
-        z: 0.43254936
+        z: 0.43250775
       Rotation:
         value:
-          x: 0.99994373
-          y: -0.008054496
-          z: -0.000394758
-          w: 0.0069007818
+          x: 0.9997387
+          y: -0.008005101
+          z: -0.020218221
+          w: 0.007048007
     - Position:
         x: 0.06933594
         y: -1.6086187
@@ -1407,7 +1402,7 @@ MonoBehaviour:
   m_PositionOffset:
     setup: 0
     min: {x: 0, y: 0, z: 0}
-    max: {x: 0.09, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
     randomX: 0
     randomY: 0
     randomZ: 0
@@ -1681,7 +1676,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.Tracked.WheelSurfaceGroundPoint
   _wheelRadius: 0.62
-  _offset: {x: -0.12, y: 0, z: 0}
 --- !u!1001 &2140982247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2014,7 +2008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8688919098557026344, guid: 57aea38f91c96344c934767a951ce240, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.3999939
+      value: 10.959991
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
