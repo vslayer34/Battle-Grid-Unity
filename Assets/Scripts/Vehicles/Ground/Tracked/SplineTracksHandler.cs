@@ -19,6 +19,8 @@ namespace BattleGridUnity.Scripts.Vehicles.Ground.Tracked
 
         private Spline _spline;
 
+        private int _numberOfIndecis;
+
 
 
         // Game Loop Methods-----------------------------------------------------------------------
@@ -26,18 +28,15 @@ namespace BattleGridUnity.Scripts.Vehicles.Ground.Tracked
         private void Start()
         {
             _spline = _trackSpline.Spline;
+            _numberOfIndecis = _splineGroundPoints.Count;
         }
 
         private void Update()
         {
             // for (int i = 0; i < _splineGroundPoints.Count; i++)
             {
-                UpdateSplinePointsLocationsToWheels(0);
-                UpdateSplinePointsLocationsToWheels(1);
-                UpdateSplinePointsLocationsToWheels(2);
-                UpdateSplinePointsLocationsToWheels(3);
-                UpdateSplinePointsLocationsToWheels(4);
-                UpdateSplinePointsLocationsToWheels(5);
+                UpdateSplinePointsLocationsToWheels(NumberOfIndecis);
+                
                 // UpdateSplinePointsLocationsToWheels(1);
                 // UpdateSplinePointsLocationsToWheels(0);
                 // UpdateSplinePointsLocationsToWheels(0);
@@ -65,6 +64,21 @@ namespace BattleGridUnity.Scripts.Vehicles.Ground.Tracked
             // {
             //     _trackSpline.Spline[_splineGroundPoints[i]].Position
             // }
+        }
+
+        // Getters and Setters-------------------------------------------------------------------------
+
+        public int NumberOfIndecis
+        {
+            get
+            {
+                if (_numberOfIndecis >= _splineGroundPoints.Count)
+                {
+                    _numberOfIndecis = 0;
+                }
+                return _numberOfIndecis++;
+            }
+
         }
     }
 }
