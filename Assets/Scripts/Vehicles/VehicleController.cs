@@ -7,6 +7,18 @@ using UnityEngine;
 
 namespace BattleGridUnity.Scripts.Vehicles
 {
+    [Serializable]
+    internal struct WheelColliderAndMesh
+    {
+        [field: SerializeField]
+        public WheelCollider Collider { get; private set; }
+
+        [field: SerializeField]
+        public Transform Mesh { get; private set; }
+
+    }
+
+
     public class VehicleController : MonoBehaviour
     {
         [SerializeField]
@@ -15,6 +27,9 @@ namespace BattleGridUnity.Scripts.Vehicles
 
         [SerializeField]
         private GroundVehicleInput _groundInput;
+
+        [SerializeField, Header("Wheels")]
+        private List<WheelColliderAndMesh> _vehicleWheels = new List<WheelColliderAndMesh>();
 
 
         [SerializeField, Header("Turret")]
@@ -25,6 +40,9 @@ namespace BattleGridUnity.Scripts.Vehicles
 
         [SerializeField]
         private Rigidbody _rigidBody;
+
+        private Vector3 _wheelPosition;
+        private Quaternion _wheelRotation;
 
 
 
@@ -66,6 +84,18 @@ namespace BattleGridUnity.Scripts.Vehicles
                     speed = -_vehicleStats.BackwardSpeed;
                 }
                 _rigidBody.AddRelativeForce(speed * Vector3.forward * Time.deltaTime, ForceMode.Acceleration);
+            }
+
+            UpdateWheelPositionAndRotation();
+        }
+
+        private void UpdateWheelPositionAndRotation()
+        {
+            foreach (var wheel in _vehicleWheels)
+            {
+                wheel.Collider.GetWorldPose(out _wheelPosition, out _wheelRotation);
+                wheel.Mesh.position = _wheelPosition;
+                wheel.Mesh.rotation = _wheelRotation;
             }
         }
 

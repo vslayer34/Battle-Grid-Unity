@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.Tracked.WheelSurfaceGroundPoint
   _wheelRadius: 0.62
-  _offset: {x: 0.04, y: 0, z: 0}
+  _offset: {x: -0.12, y: 0, z: 0}
 --- !u!1001 &148137591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -199,10 +199,6 @@ PrefabInstance:
     - target: {fileID: 664286755675810512, guid: 57aea38f91c96344c934767a951ce240, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1197790438400727444, guid: 57aea38f91c96344c934767a951ce240, type: 3}
-      propertyPath: m_LinearDamping
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1242803706306113916, guid: 57aea38f91c96344c934767a951ce240, type: 3}
       propertyPath: m_Enabled
@@ -944,12 +940,12 @@ WheelCollider:
   m_GameObject: {fileID: 433626089}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.7
+  m_Radius: 0.6
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.5
+  m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -1015,12 +1011,12 @@ WheelCollider:
   m_GameObject: {fileID: 449282976}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.7
+  m_Radius: 0.6
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.5
+  m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -1129,12 +1125,12 @@ WheelCollider:
   m_GameObject: {fileID: 591483497}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.7
+  m_Radius: 0.6
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.5
+  m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -1312,12 +1308,12 @@ WheelCollider:
   m_GameObject: {fileID: 801684459}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.7
+  m_Radius: 0.6
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.5
+  m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -1383,12 +1379,12 @@ WheelCollider:
   m_GameObject: {fileID: 810078356}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.7
+  m_Radius: 0.6
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.5
+  m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -1454,12 +1450,12 @@ WheelCollider:
   m_GameObject: {fileID: 889919933}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.7
+  m_Radius: 0.6
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.5
+  m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -1507,7 +1503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.Tracked.WheelSurfaceGroundPoint
   _wheelRadius: 0.62
-  _offset: {x: 0.04, y: 0, z: 0}
+  _offset: {x: -0.12, y: 0, z: 0}
 --- !u!1 &978381169 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8945974556646832151, guid: 57aea38f91c96344c934767a951ce240, type: 3}
@@ -1531,7 +1527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.Tracked.WheelSurfaceGroundPoint
   _wheelRadius: 0.62
-  _offset: {x: 0.04, y: 0, z: 0}
+  _offset: {x: -0.12, y: 0, z: 0}
 --- !u!1 &1037245661 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8915842723173358876, guid: 57aea38f91c96344c934767a951ce240, type: 3}
@@ -1575,7 +1571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.Tracked.WheelSurfaceGroundPoint
   _wheelRadius: 0.62
-  _offset: {x: 0.06, y: 0, z: 0}
+  _offset: {x: -0.12, y: 0, z: 0}
 --- !u!114 &1037245668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1589,7 +1585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.Tracked.WheelSurfaceGroundPoint
   _wheelRadius: 0.62
-  _offset: {x: 0.06, y: 0, z: 0}
+  _offset: {x: -0.12, y: 0, z: 0}
 --- !u!114 &1037245669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1603,7 +1599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.Tracked.WheelSurfaceGroundPoint
   _wheelRadius: 0.62
-  _offset: {x: 0.06, y: 0, z: 0}
+  _offset: {x: -0.12, y: 0, z: 0}
 --- !u!114 &1037245670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1617,7 +1613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.Tracked.WheelSurfaceGroundPoint
   _wheelRadius: 0.62
-  _offset: {x: 0.06, y: 0, z: 0}
+  _offset: {x: -0.12, y: 0, z: 0}
 --- !u!114 &1037245671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1631,7 +1627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.Tracked.WheelSurfaceGroundPoint
   _wheelRadius: 0.62
-  _offset: {x: -0.12, y: 0.09, z: 0.49}
+  _offset: {x: -0.12, y: 0, z: 0}
 --- !u!4 &1037245675 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8362485562424734804, guid: 57aea38f91c96344c934767a951ce240, type: 3}
@@ -1665,7 +1661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.Tracked.WheelSurfaceGroundPoint
   _wheelRadius: 0.62
-  _offset: {x: 0.04, y: 0.09, z: 0.42}
+  _offset: {x: -0.12, y: 0, z: 0}
 --- !u!1001 &1166750425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2212,7 +2208,6 @@ MonoBehaviour:
   - {fileID: 1037245668}
   - {fileID: 1037245667}
   - {fileID: 2077223720}
-  _frameInterval: 1
 --- !u!1 &1264284492
 GameObject:
   m_ObjectHideFlags: 0
@@ -2268,7 +2263,6 @@ MonoBehaviour:
   - {fileID: 1414917624}
   - {fileID: 936083209}
   - {fileID: 53303140}
-  _frameInterval: 1
 --- !u!114 &1264284495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2740,12 +2734,12 @@ WheelCollider:
   m_GameObject: {fileID: 1293920787}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.7
+  m_Radius: 0.6
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.5
+  m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -2793,7 +2787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.Tracked.WheelSurfaceGroundPoint
   _wheelRadius: 0.62
-  _offset: {x: 0.04, y: 0, z: 0}
+  _offset: {x: -0.12, y: 0, z: 0}
 --- !u!1 &1414917619 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7250304386370999600, guid: 57aea38f91c96344c934767a951ce240, type: 3}
@@ -2817,7 +2811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.Tracked.WheelSurfaceGroundPoint
   _wheelRadius: 0.62
-  _offset: {x: 0.04, y: 0, z: 0}
+  _offset: {x: -0.12, y: 0, z: 0}
 --- !u!1 &1450773670
 GameObject:
   m_ObjectHideFlags: 0
@@ -2859,12 +2853,12 @@ WheelCollider:
   m_GameObject: {fileID: 1450773670}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.7
+  m_Radius: 0.6
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.5
+  m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -2935,12 +2929,12 @@ WheelCollider:
   m_GameObject: {fileID: 1610016331}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.7
+  m_Radius: 0.6
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.5
+  m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -3178,12 +3172,12 @@ WheelCollider:
   m_GameObject: {fileID: 1838291228}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.7
+  m_Radius: 0.6
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.5
+  m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -3249,12 +3243,12 @@ WheelCollider:
   m_GameObject: {fileID: 1839532593}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.7
+  m_Radius: 0.6
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.5
+  m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -3320,12 +3314,12 @@ WheelCollider:
   m_GameObject: {fileID: 1930442724}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.7
+  m_Radius: 0.6
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.5
+  m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -3412,7 +3406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.Tracked.WheelSurfaceGroundPoint
   _wheelRadius: 0.62
-  _offset: {x: 0.06, y: 0, z: 0}
+  _offset: {x: -0.12, y: 0, z: 0}
 --- !u!4 &2077223724 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6509720597040164806, guid: 57aea38f91c96344c934767a951ce240, type: 3}
