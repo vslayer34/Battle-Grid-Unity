@@ -993,7 +993,7 @@ Transform:
   m_GameObject: {fileID: 293365327}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.07547, y: 3.5562334, z: -0.6060791}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1070,11 +1070,6 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
---- !u!4 &399980283 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8048395707066916534, guid: 57aea38f91c96344c934767a951ce240, type: 3}
-  m_PrefabInstance: {fileID: 148137591}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &432432459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,10 +1551,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineThirdPersonFollow
   Damping: {x: 0.58, y: 0.5, z: 0.3}
-  ShoulderOffset: {x: 0.4, y: 1.29, z: -5.27}
+  ShoulderOffset: {x: 0.01, y: 3.36, z: -3.42}
   VerticalArmLength: 0.4
-  CameraSide: 1
-  CameraDistance: 4.87
+  CameraSide: 0.557
+  CameraDistance: 5.61
   AvoidObstacles:
     Enabled: 0
     CollisionFilter:
@@ -1589,8 +1584,8 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 399980283}
-    LookAtTarget: {fileID: 399980283}
+    TrackingTarget: {fileID: 293365328}
+    LookAtTarget: {fileID: 293365328}
     CustomLookAtTarget: 1
   Lens:
     FieldOfView: 60.000004
@@ -1621,7 +1616,7 @@ Transform:
   m_GameObject: {fileID: 755639965}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.675476, y: 4.616234, z: -10.7460785}
+  m_LocalPosition: {x: 0.0011291504, y: 3.7600002, z: -9.029999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1890,7 +1885,7 @@ Transform:
   m_GameObject: {fileID: 944041825}
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000032782555, y: 0.00000005697686, z: -0.00000011944157, w: 1}
-  m_LocalPosition: {x: -4.750763, y: 1.0878763, z: 0.6211853}
+  m_LocalPosition: {x: -0.234, y: 0.633, z: 0.584}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2418,7 +2413,7 @@ Transform:
   m_GameObject: {fileID: 1156815826}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.675476, y: 4.616234, z: -10.7460785}
+  m_LocalPosition: {x: 0.0011291504, y: 3.7600002, z: -9.029999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6201,7 +6196,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 2656241309976714745, guid: 79b6500db34061c49b3e67cc5b02144f, type: 3}
+  m_Mesh: {fileID: 2656241309976714745, guid: 63839f070e057a64b9239e09ce90237a, type: 3}
 --- !u!23 &7783427601571750057
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6277,6 +6272,7 @@ GameObject:
   - component: {fileID: 2027912778868726182}
   - component: {fileID: 7014429169252564802}
   - component: {fileID: 6588694905600245009}
+  - component: {fileID: 8176242696055270596}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -6284,6 +6280,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &8176242696055270596
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8176242696055270595}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1249136819799773786, guid: 79b6500db34061c49b3e67cc5b02144f, type: 3}
 --- !u!1 &8438981690233995524
 GameObject:
   m_ObjectHideFlags: 0
