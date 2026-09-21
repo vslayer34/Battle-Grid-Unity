@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0872400863fa1014e80b58f714acee78, type: 3}
-  m_Name: T90AM
+  m_Name: BTR-82A
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.GroundVehicleStats
-  <TurretRotationSpeed>k__BackingField: 40
+  <TurretRotationSpeed>k__BackingField: 60
   <HullRotationSpeed>k__BackingField: 250
-  <ForwardSpeed>k__BackingField: 1999.9998
-  <BackwardSpeed>k__BackingField: 750
-  <GunRotationSpeed>k__BackingField: 1
-  <MaxElevationMainGunAngle>k__BackingField: 14
-  <MinDepressionMainGunAngle>k__BackingField: 6
+  <ForwardSpeed>k__BackingField: 2400
+  <BackwardSpeed>k__BackingField: 360
+  <GunRotationSpeed>k__BackingField: 15
+  <MaxElevationMainGunAngle>k__BackingField: 70
+  <MinDepressionMainGunAngle>k__BackingField: 7
