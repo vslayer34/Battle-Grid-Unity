@@ -97,20 +97,7 @@ namespace BattleGridUnity.Scripts.Vehicles
             bool isAccelerating = Mathf.Sign(_groundInput.MovementInputVector.y) == Mathf.Sign(forwardSpeed);
 
             // Calculate the vehicle steering
-            foreach (var wheel in _steeringWheels)
-            {
-                if (_groundInput.MovementInputVector.x == 0.0f)
-                {
-                    wheel.steerAngle = Mathf.Lerp(wheel.steerAngle, 0.0f, Time.deltaTime);
-                }
-                else
-                {
-                    wheel.steerAngle += _groundInput.MovementInputVector.x * currentSteeringRange * Time.deltaTime;
-                    wheel.steerAngle = Mathf.Clamp(wheel.steerAngle, -_vehicleStats.SteeringRange, _vehicleStats.SteeringRange);
-                }
-
-                wheel.steerAngle = Mathf.Clamp(wheel.steerAngle, -_vehicleStats.SteeringRange, _vehicleStats.SteeringRange);
-            }
+            TurnVehicle(currentSteeringRange);
 
             if (isAccelerating)
             {
@@ -162,14 +149,23 @@ namespace BattleGridUnity.Scripts.Vehicles
             }
         }
 
-        private void TurnVehicle()
+        private void TurnVehicle(float steeringRange)
         {
-            Debug.Log($"Turn Movement Vector {_groundInput.MovementInputVector.x}");
+            // Calculate the vehicle steering
+            foreach (var wheel in _steeringWheels)
+            {
+                if (_groundInput.MovementInputVector.x == 0.0f)
+                {
+                    wheel.steerAngle = Mathf.Lerp(wheel.steerAngle, 0.0f, Time.deltaTime);
+                }
+                else
+                {
+                    wheel.steerAngle += _groundInput.MovementInputVector.x * steeringRange * Time.deltaTime;
+                    wheel.steerAngle = Mathf.Clamp(wheel.steerAngle, -_vehicleStats.SteeringRange, _vehicleStats.SteeringRange);
+                }
 
-            float turnSpeed = _groundInput.MovementInputVector.x * Time.deltaTime * _vehicleStats.HullRotationSpeed;
-
-            // _rigidBody.MoveRotation(Quaternion.Euler(0.0f, turnSpeed, 0.0f));
-            _rigidBody.AddRelativeTorque(0.0f, turnSpeed, 0.0f, ForceMode.Acceleration);
+                wheel.steerAngle = Mathf.Clamp(wheel.steerAngle, -_vehicleStats.SteeringRange, _vehicleStats.SteeringRange);
+            }
         }
 
 
