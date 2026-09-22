@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0872400863fa1014e80b58f714acee78, type: 3}
   m_Name: BTR-82A
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.Ground.GroundVehicleStats
-  <TurretRotationSpeed>k__BackingField: 60
   <HullRotationSpeed>k__BackingField: 250
-  <ForwardSpeed>k__BackingField: 2400
-  <BackwardSpeed>k__BackingField: 360
+  <MaxForwardSpeed>k__BackingField: 80
+  <BackwardSpeed>k__BackingField: 12
+  <MotorTorque>k__BackingField: 951
+  <BrakeTorque>k__BackingField: 951
+  <SteeringRange>k__BackingField: 40
+  <SteeringRangeAtMaxSpeed>k__BackingField: 10
+  <CenterOfGravityOffset>k__BackingField: 0
   <GunRotationSpeed>k__BackingField: 15
+  <TurretRotationSpeed>k__BackingField: 60
   <MaxElevationMainGunAngle>k__BackingField: 70
   <MinDepressionMainGunAngle>k__BackingField: 7
