@@ -964,7 +964,7 @@ WheelCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
@@ -1066,7 +1066,7 @@ WheelCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
@@ -2025,7 +2025,7 @@ WheelCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
@@ -3638,7 +3638,7 @@ WheelCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
@@ -3780,7 +3780,7 @@ WheelCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
@@ -4280,7 +4280,7 @@ WheelCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
@@ -4351,7 +4351,7 @@ WheelCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
@@ -4493,7 +4493,7 @@ WheelCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
@@ -5192,10 +5192,10 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1444109872906276779}
   serializedVersion: 5
-  m_Mass: 7700
-  m_LinearDamping: 0.00025
+  m_Mass: 3850
+  m_LinearDamping: 0.05
   m_AngularDamping: 3
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_CenterOfMass: {x: 0, y: 0, z: 2.27}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
@@ -5565,7 +5565,7 @@ GameObject:
   - component: {fileID: 2228140373208571902}
   - component: {fileID: 7758465311226388159}
   - component: {fileID: 7758465311226388160}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hull
   m_TagString: Untagged
   m_Icon: {fileID: 0}

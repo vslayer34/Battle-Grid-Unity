@@ -156,11 +156,11 @@ namespace BattleGridUnity.Scripts.Vehicles
             {
                 if (_groundInput.MovementInputVector.x == 0.0f)
                 {
-                    wheel.steerAngle = Mathf.Lerp(wheel.steerAngle, 0.0f, Time.deltaTime);
+                    wheel.steerAngle = Mathf.Lerp(wheel.steerAngle, 0.0f, _vehicleStats.HullRotationSpeed * Time.deltaTime);
                 }
                 else
                 {
-                    wheel.steerAngle += _groundInput.MovementInputVector.x * steeringRange * Time.deltaTime;
+                    wheel.steerAngle += _groundInput.MovementInputVector.x * steeringRange * _vehicleStats.HullRotationSpeed * Time.deltaTime;
                     wheel.steerAngle = Mathf.Clamp(wheel.steerAngle, -_vehicleStats.SteeringRange, _vehicleStats.SteeringRange);
                 }
 
