@@ -940,12 +940,12 @@ WheelCollider:
   m_Center: {x: 0, y: 0.1, z: 0}
   m_Radius: 0.66
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 150000
+    damper: 10000
     targetPosition: 0.5
   m_SuspensionDistance: 0.25
   m_ForceAppPointDistance: 0
-  m_Mass: 50
+  m_Mass: 200
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
@@ -1042,12 +1042,12 @@ WheelCollider:
   m_Center: {x: 0, y: 0.1, z: 0}
   m_Radius: 0.66
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 150000
+    damper: 10000
     targetPosition: 0.5
   m_SuspensionDistance: 0.25
   m_ForceAppPointDistance: 0
-  m_Mass: 50
+  m_Mass: 200
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
@@ -2001,12 +2001,12 @@ WheelCollider:
   m_Center: {x: 0, y: 0.1, z: 0}
   m_Radius: 0.66
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 150000
+    damper: 10000
     targetPosition: 0.5
   m_SuspensionDistance: 0.25
   m_ForceAppPointDistance: 0
-  m_Mass: 50
+  m_Mass: 200
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
@@ -3614,12 +3614,12 @@ WheelCollider:
   m_Center: {x: 0, y: 0.1, z: 0}
   m_Radius: 0.66
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 150000
+    damper: 10000
     targetPosition: 0.5
   m_SuspensionDistance: 0.25
   m_ForceAppPointDistance: 0
-  m_Mass: 50
+  m_Mass: 200
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
@@ -3756,12 +3756,12 @@ WheelCollider:
   m_Center: {x: 0, y: 0.1, z: 0}
   m_Radius: 0.66
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 150000
+    damper: 10000
     targetPosition: 0.5
   m_SuspensionDistance: 0.25
   m_ForceAppPointDistance: 0
-  m_Mass: 50
+  m_Mass: 200
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
@@ -4256,12 +4256,12 @@ WheelCollider:
   m_Center: {x: 0, y: 0.1, z: 0}
   m_Radius: 0.66
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 150000
+    damper: 10000
     targetPosition: 0.5
   m_SuspensionDistance: 0.25
   m_ForceAppPointDistance: 0
-  m_Mass: 50
+  m_Mass: 200
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
@@ -4327,12 +4327,12 @@ WheelCollider:
   m_Center: {x: 0, y: 0.1, z: 0}
   m_Radius: 0.66
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 150000
+    damper: 10000
     targetPosition: 0.5
   m_SuspensionDistance: 0.25
   m_ForceAppPointDistance: 0
-  m_Mass: 50
+  m_Mass: 200
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
@@ -4469,12 +4469,12 @@ WheelCollider:
   m_Center: {x: 0, y: 0.1, z: 0}
   m_Radius: 0.66
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 150000
+    damper: 10000
     targetPosition: 0.5
   m_SuspensionDistance: 0.25
   m_ForceAppPointDistance: 0
-  m_Mass: 50
+  m_Mass: 200
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
@@ -4886,6 +4886,7 @@ GameObject:
   - component: {fileID: 2252172460844045589}
   - component: {fileID: 2252172460844045588}
   - component: {fileID: 2252172460844045587}
+  - component: {fileID: 2252172460844045590}
   m_Layer: 0
   m_Name: BTR-82A WorkInProgress
   m_TagString: Untagged
@@ -5192,7 +5193,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1444109872906276779}
   serializedVersion: 5
-  m_Mass: 3850
+  m_Mass: 15400
   m_LinearDamping: 0.05
   m_AngularDamping: 3
   m_CenterOfMass: {x: 0, y: 0, z: 2.27}
@@ -5297,6 +5298,20 @@ MonoBehaviour:
   _turret: {fileID: 2027912778868726182}
   _mantlet: {fileID: 4653616900371526336}
   _rigidBody: {fileID: 2252172460844045586}
+--- !u!114 &2252172460844045590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444109872906276779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8822b8e08691ce54d9cdfe5f7467d3ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArmamentHandler
+  _vehicleStats: {fileID: 11400000, guid: 9b4e7b35f7fe3d741b62923facce2100, type: 2}
+  _groundInput: {fileID: 2252172460844045588}
 --- !u!33 &2836799128507508886
 MeshFilter:
   m_ObjectHideFlags: 0

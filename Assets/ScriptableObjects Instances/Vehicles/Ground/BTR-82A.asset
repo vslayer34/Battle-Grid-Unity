@@ -16,7 +16,7 @@ MonoBehaviour:
   <MaxForwardSpeed>k__BackingField: 80
   <BackwardSpeed>k__BackingField: 12
   <MotorTorque>k__BackingField: 951
-  <BrakeTorque>k__BackingField: 951
+  <BrakeTorque>k__BackingField: 9510
   <SteeringRange>k__BackingField: 40
   <SteeringRangeAtMaxSpeed>k__BackingField: 10
   <CenterOfGravityOffset>k__BackingField: 0
@@ -24,3 +24,5 @@ MonoBehaviour:
   <TurretRotationSpeed>k__BackingField: 60
   <MaxElevationMainGunAngle>k__BackingField: 70
   <MinDepressionMainGunAngle>k__BackingField: 7
+  <MainGun>k__BackingField: {fileID: 11400000, guid: ce60639431f3dbe41980483d857ab086, type: 2}
+  <SecondaryGun>k__BackingField: {fileID: 11400000, guid: accc2c87c5f9ac14685fb9a70d795f88, type: 2}

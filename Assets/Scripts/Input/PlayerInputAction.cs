@@ -270,6 +270,24 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""PrimaryFire"",
+                    ""type"": ""Button"",
+                    ""id"": ""34d6ff2b-2030-48bc-8b6d-9f62bc3c0394"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SecondaryFire"",
+                    ""type"": ""Button"",
+                    ""id"": ""2bff8367-4957-41ca-90a3-67c41d452435"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -349,6 +367,28 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""29da74df-772b-48af-ae57-bf9031fef5ff"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Mouse & Keyboard"",
+                    ""action"": ""PrimaryFire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""70652d6b-88c2-4055-8d4c-0474c0d7174a"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Mouse & Keyboard"",
+                    ""action"": ""SecondaryFire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -384,6 +424,8 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
         m_GroundVehicle_BasicMovement = m_GroundVehicle.FindAction("Basic Movement", throwIfNotFound: true);
         m_GroundVehicle_SwitchCamera = m_GroundVehicle.FindAction("SwitchCamera", throwIfNotFound: true);
         m_GroundVehicle_Look = m_GroundVehicle.FindAction("Look", throwIfNotFound: true);
+        m_GroundVehicle_PrimaryFire = m_GroundVehicle.FindAction("PrimaryFire", throwIfNotFound: true);
+        m_GroundVehicle_SecondaryFire = m_GroundVehicle.FindAction("SecondaryFire", throwIfNotFound: true);
     }
 
     ~@PlayerInputAction()
@@ -608,6 +650,8 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
     private readonly InputAction m_GroundVehicle_BasicMovement;
     private readonly InputAction m_GroundVehicle_SwitchCamera;
     private readonly InputAction m_GroundVehicle_Look;
+    private readonly InputAction m_GroundVehicle_PrimaryFire;
+    private readonly InputAction m_GroundVehicle_SecondaryFire;
     /// <summary>
     /// Provides access to input actions defined in input action map "GroundVehicle".
     /// </summary>
@@ -631,6 +675,14 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "GroundVehicle/Look".
         /// </summary>
         public InputAction @Look => m_Wrapper.m_GroundVehicle_Look;
+        /// <summary>
+        /// Provides access to the underlying input action "GroundVehicle/PrimaryFire".
+        /// </summary>
+        public InputAction @PrimaryFire => m_Wrapper.m_GroundVehicle_PrimaryFire;
+        /// <summary>
+        /// Provides access to the underlying input action "GroundVehicle/SecondaryFire".
+        /// </summary>
+        public InputAction @SecondaryFire => m_Wrapper.m_GroundVehicle_SecondaryFire;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -666,6 +718,12 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
+            @PrimaryFire.started += instance.OnPrimaryFire;
+            @PrimaryFire.performed += instance.OnPrimaryFire;
+            @PrimaryFire.canceled += instance.OnPrimaryFire;
+            @SecondaryFire.started += instance.OnSecondaryFire;
+            @SecondaryFire.performed += instance.OnSecondaryFire;
+            @SecondaryFire.canceled += instance.OnSecondaryFire;
         }
 
         /// <summary>
@@ -686,6 +744,12 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
+            @PrimaryFire.started -= instance.OnPrimaryFire;
+            @PrimaryFire.performed -= instance.OnPrimaryFire;
+            @PrimaryFire.canceled -= instance.OnPrimaryFire;
+            @SecondaryFire.started -= instance.OnSecondaryFire;
+            @SecondaryFire.performed -= instance.OnSecondaryFire;
+            @SecondaryFire.canceled -= instance.OnSecondaryFire;
         }
 
         /// <summary>
@@ -803,5 +867,19 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnLook(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "PrimaryFire" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPrimaryFire(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SecondaryFire" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSecondaryFire(InputAction.CallbackContext context);
     }
 }

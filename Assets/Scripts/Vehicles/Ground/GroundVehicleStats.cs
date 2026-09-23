@@ -1,3 +1,4 @@
+using BattleGridUnity.ScriptableObjects.Wepaons;
 using UnityEngine;
 
 
@@ -45,6 +46,11 @@ namespace BattleGridUnity.Scripts.Vehicles.Ground
         [field: SerializeField]
         public float MinDepressionMainGunAngle { get; private set; }
 
-        
+
+        [field: SerializeField, Header("Armaments")]
+        public WeaponState MainGun { get; private set; }
+
+        [field: SerializeField]
+        public WeaponState SecondaryGun { get; private set; }
     }
 }

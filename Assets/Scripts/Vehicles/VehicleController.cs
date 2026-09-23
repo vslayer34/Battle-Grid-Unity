@@ -82,8 +82,6 @@ namespace BattleGridUnity.Scripts.Vehicles
 
         private void MoveVehicleForward()
         {
-            Debug.Log($"Forward Movement Vector {_groundInput.MovementInputVector.y}");
-
             float speed = 0.0f;
 
             // Calculate current speed along the forward axis
@@ -116,6 +114,7 @@ namespace BattleGridUnity.Scripts.Vehicles
             else
             {
                 float brakeMultiplier = speedFactor > 0.0f ? 10.0f : 0.0f;
+
                 foreach (var wheel in _driveWheels)
                 {
                     wheel.motorTorque = 0.0f;
@@ -141,7 +140,7 @@ namespace BattleGridUnity.Scripts.Vehicles
 
             UpdateWheelPositionAndRotation();
 
-            Debug.Log($"Current Vehicle Speed: {forwardSpeed}");
+            // Debug.Log($"Current Vehicle Speed: {forwardSpeed}");
         }
 
         private void UpdateWheelPositionAndRotation()
