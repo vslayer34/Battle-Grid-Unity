@@ -101,9 +101,13 @@ namespace BattleGridUnity.Scripts.Vehicles
 
             if (isAccelerating)
             {
+                float gearRatio = 0.0f;
+                gearRatio = speedFactor > 15.0f ? 7.5f : 4.0f;
+
                 foreach (var wheel in _driveWheels)
                 {
-                    wheel.motorTorque = _groundInput.MovementInputVector.y * currentMotorTorque;
+                    
+                    wheel.motorTorque = _groundInput.MovementInputVector.y * currentMotorTorque * gearRatio;
 
                     // disable brakes when accelerating
                     wheel.brakeTorque = 0.0f;
@@ -111,12 +115,13 @@ namespace BattleGridUnity.Scripts.Vehicles
             }
             else
             {
+                float brakeMultiplier = speedFactor > 0.0f ? 10.0f : 0.0f;
                 foreach (var wheel in _driveWheels)
                 {
                     wheel.motorTorque = 0.0f;
 
                     // disable brakes when accelerating
-                    wheel.brakeTorque = Mathf.Abs(_groundInput.MovementInputVector.y * _vehicleStats.BrakeTorque);
+                    wheel.brakeTorque = Mathf.Abs(_groundInput.MovementInputVector.y * _vehicleStats.BrakeTorque) * brakeMultiplier;
                 }
             }
 
