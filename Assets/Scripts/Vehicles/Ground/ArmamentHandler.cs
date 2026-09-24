@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using BattleGridUnity.ScriptableObjects.Wepaons;
 using UnityEngine;
@@ -6,8 +7,11 @@ namespace BattleGridUnity.Scripts.Vehicles.Ground
 {
     public class ArmamentHandler : MonoBehaviour
     {
-        [SerializeField]
-        private GroundVehicleStats _vehicleStats;
+        public event Action<float> OnPrimaryWeaponFired;
+        public event Action<float> OnSecondaryWeaponFired;
+        
+        [field: SerializeField]
+        public GroundVehicleStats VehicleStats { get; private set; }
 
         [SerializeField]
         private GroundVehicleInput _groundInput;
@@ -31,8 +35,8 @@ namespace BattleGridUnity.Scripts.Vehicles.Ground
             _groundInput.OnPrimaryFireInteracted += SetPrimaryFireValue;
             _groundInput.OnSecondaryFireInteracted += SetSecondaryFireValue;
 
-            _mainGun = _vehicleStats.MainGun;
-            _secondaryGun = _vehicleStats.SecondaryGun;
+            _mainGun = VehicleStats.MainGun;
+            _secondaryGun = VehicleStats.SecondaryGun;
         }
 
         private void OnDisable()
@@ -46,7 +50,9 @@ namespace BattleGridUnity.Scripts.Vehicles.Ground
         private IEnumerator FireMainArmament()
         {
             Debug.Log($"Firing Main Gun: {_mainGun.WeaponName}");
-            float fireDelay = 60.0f / Random.Range(_mainGun.RateOfFire.Min, _mainGun.RateOfFire.Max + 1);
+            float fireDelay = 60.0f / UnityEngine.Random.Range(_mainGun.RateOfFire.Min, _mainGun.RateOfFire.Max + 1);
+
+            OnPrimaryWeaponFired?.Invoke(fireDelay);
 
 
             yield return new WaitForSeconds(fireDelay);
@@ -65,7 +71,9 @@ namespace BattleGridUnity.Scripts.Vehicles.Ground
         {
             Debug.Log($"Firing Secondary Gun: {_secondaryGun.WeaponName}");
 
-            float fireDelay = 60.0f / Random.Range(_secondaryGun.RateOfFire.Min, _secondaryGun.RateOfFire.Max + 1);
+            float fireDelay = 60.0f / UnityEngine.Random.Range(_secondaryGun.RateOfFire.Min, _secondaryGun.RateOfFire.Max + 1);
+
+            OnSecondaryWeaponFired?.Invoke(fireDelay);
 
             yield return new WaitForSeconds(fireDelay);
 

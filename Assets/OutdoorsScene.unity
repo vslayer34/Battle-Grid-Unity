@@ -124,6 +124,135 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1830539314893666135, guid: 57aea38f91c96344c934767a951ce240, type: 3}
   m_PrefabInstance: {fileID: 148137591}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &51824781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 51824782}
+  - component: {fileID: 51824783}
+  m_Layer: 0
+  m_Name: Main Auto Cannon AudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &51824782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51824781}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.108306885, y: -0.040433213, z: 3.2697904}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 723837075414216201}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &51824783
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51824781}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &53303135 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6887003742114237927, guid: 57aea38f91c96344c934767a951ce240, type: 3}
@@ -1375,6 +1504,135 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!1 &628845468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 628845469}
+  - component: {fileID: 628845470}
+  m_Layer: 0
+  m_Name: PKT AudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &628845469
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628845468}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.6433716, y: -0.012936592, z: 0.9180908}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1586738202}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &628845470
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628845468}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &728712907
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,6 +1758,7 @@ GameObject:
   - component: {fileID: 755639968}
   - component: {fileID: 755639967}
   - component: {fileID: 755639966}
+  - component: {fileID: 755639971}
   m_Layer: 0
   m_Name: Third Person Camera
   m_TagString: Untagged
@@ -1622,6 +1881,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2252172460844045585}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &755639971
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755639965}
+  m_Enabled: 1
 --- !u!1 &801684459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1869,6 +2136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 944041826}
   - component: {fileID: 944041827}
+  - component: {fileID: 944041828}
   m_Layer: 0
   m_Name: FPS Camera
   m_TagString: Untagged
@@ -1885,11 +2153,11 @@ Transform:
   m_GameObject: {fileID: 944041825}
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000032782555, y: 0.00000005697686, z: -0.00000011944157, w: 1}
-  m_LocalPosition: {x: -0.38418576, y: -0.1786187, z: 1.4127959}
+  m_LocalPosition: {x: -0.3841858, y: -0.17861843, z: 1.412796}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 723837075414216201}
+  m_Father: {fileID: 4653616900371526336}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &944041827
 MonoBehaviour:
@@ -1934,6 +2202,14 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
+--- !u!81 &944041828
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944041825}
+  m_Enabled: 1
 --- !u!1 &978381169 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8945974556646832151, guid: 57aea38f91c96344c934767a951ce240, type: 3}
@@ -3789,6 +4065,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 908497049648219107, guid: 57aea38f91c96344c934767a951ce240, type: 3}
   m_PrefabInstance: {fileID: 148137591}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1586738201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1586738202}
+  - component: {fileID: 1586738203}
+  m_Layer: 0
+  m_Name: Secondaty Gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1586738202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586738201}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 628845469}
+  m_Father: {fileID: 4653616900371526336}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1586738203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586738201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5c777515754b4a46bac5e8ffde9d1ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.VehicleWeapon
+  _armamentHandler: {fileID: 2252172460844045590}
+  _weaponClass: 1
+  _gunAudioSource: {fileID: 628845470}
+  _gunAudioCLip: {fileID: 8300000, guid: 02d9ea08b3c292a479d0b2edf2af8eca, type: 3}
+  _weaponMesh: {fileID: 0}
+  _weaponRecoilPoint: {fileID: 0}
+  _weaponRecoilTime: 0
 --- !u!1 &1610016331
 GameObject:
   m_ObjectHideFlags: 0
@@ -3860,6 +4188,37 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!1 &1621794943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1621794944}
+  m_Layer: 0
+  m_Name: Recoil Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1621794944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621794943}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.000000017881392, y: 0.00000028610228, z: -0.347}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 723837075414216201}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1658774004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4862,7 +5221,8 @@ Transform:
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 944041826}
+  - {fileID: 51824782}
+  - {fileID: 1621794944}
   m_Father: {fileID: 4653616900371526336}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &998642958607933891
@@ -5310,7 +5670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8822b8e08691ce54d9cdfe5f7467d3ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArmamentHandler
-  _vehicleStats: {fileID: 11400000, guid: 9b4e7b35f7fe3d741b62923facce2100, type: 2}
+  <VehicleStats>k__BackingField: {fileID: 11400000, guid: 9b4e7b35f7fe3d741b62923facce2100, type: 2}
   _groundInput: {fileID: 2252172460844045588}
 --- !u!33 &2836799128507508886
 MeshFilter:
@@ -5414,6 +5774,7 @@ GameObject:
   - component: {fileID: 4653616900371526336}
   - component: {fileID: 998642958607933891}
   - component: {fileID: 1539964143067892177}
+  - component: {fileID: 4653616900371526337}
   m_Layer: 0
   m_Name: Armament Pivot
   m_TagString: Untagged
@@ -5566,8 +5927,29 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 723837075414216201}
+  - {fileID: 1586738202}
+  - {fileID: 944041826}
   m_Father: {fileID: 2027912778868726182}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4653616900371526337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3835674190341459503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5c777515754b4a46bac5e8ffde9d1ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.VehicleWeapon
+  _armamentHandler: {fileID: 2252172460844045590}
+  _weaponClass: 0
+  _gunAudioSource: {fileID: 51824783}
+  _gunAudioCLip: {fileID: 8300000, guid: b8e5bb34f15d3584ca10bec3b4b07503, type: 3}
+  _weaponMesh: {fileID: 723837075414216201}
+  _weaponRecoilPoint: {fileID: 1621794944}
+  _weaponRecoilTime: 0
 --- !u!1 &4677323289665540385
 GameObject:
   m_ObjectHideFlags: 0

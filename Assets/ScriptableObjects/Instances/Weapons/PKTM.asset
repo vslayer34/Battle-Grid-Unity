@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18725f221cbfded48925638a6ada44cb, type: 3}
   m_Name: PKTM
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.ScriptableObjects.Wepaons.WeaponState
-  <WeaponName>k__BackingField: 2A72 automatic cannon
+  <WeaponName>k__BackingField: PKT
   <Caliber>k__BackingField: 7.62
   <RateOfFire>k__BackingField:
     <Min>k__BackingField: 700
