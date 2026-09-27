@@ -4065,6 +4065,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 908497049648219107, guid: 57aea38f91c96344c934767a951ce240, type: 3}
   m_PrefabInstance: {fileID: 148137591}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1584857875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1584857876}
+  m_Layer: 0
+  m_Name: Projectile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1584857876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584857875}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1586738201
 GameObject:
   m_ObjectHideFlags: 0
@@ -4075,6 +4106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1586738202}
   - component: {fileID: 1586738203}
+  - component: {fileID: 1586738204}
   m_Layer: 0
   m_Name: Secondaty Gun
   m_TagString: Untagged
@@ -4117,6 +4149,22 @@ MonoBehaviour:
   _weaponMesh: {fileID: 0}
   _weaponRecoilPoint: {fileID: 0}
   _weaponRecoilTime: 0
+--- !u!114 &1586738204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586738201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1d3adf70b4dbb4f85378ea7c047afc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AmmoSpawner
+  _vehicleWeapon: {fileID: 1586738203}
+  _fireSource: {fileID: 2252172460844045586}
+  _firedAmmo: {fileID: 0}
+  _weapon: {fileID: 0}
 --- !u!1 &1610016331
 GameObject:
   m_ObjectHideFlags: 0
@@ -5201,6 +5249,7 @@ GameObject:
   - component: {fileID: 723837075414216201}
   - component: {fileID: 2836799128507508886}
   - component: {fileID: 1568307595068123407}
+  - component: {fileID: 2836799128507508887}
   m_Layer: 0
   m_Name: Main Gun Barrel
   m_TagString: Untagged
@@ -5680,6 +5729,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118934301949678220}
   m_Mesh: {fileID: -840355246141328532, guid: 79b6500db34061c49b3e67cc5b02144f, type: 3}
+--- !u!114 &2836799128507508887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118934301949678220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1d3adf70b4dbb4f85378ea7c047afc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AmmoSpawner
+  _vehicleWeapon: {fileID: 4653616900371526337}
+  _fireSource: {fileID: 2252172460844045586}
+  _firedAmmo: {fileID: 0}
+  _weapon: {fileID: 0}
 --- !u!33 &2985741861694529034
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6787,3 +6852,4 @@ SceneRoots:
   - {fileID: 6917621629505439025}
   - {fileID: 148137591}
   - {fileID: 2252172460844045585}
+  - {fileID: 1584857876}

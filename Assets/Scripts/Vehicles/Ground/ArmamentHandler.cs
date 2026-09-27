@@ -49,7 +49,7 @@ namespace BattleGridUnity.Scripts.Vehicles.Ground
 
         private IEnumerator FireMainArmament()
         {
-            Debug.Log($"Firing Main Gun: {_mainGun.WeaponName}");
+            // Debug.Log($"Firing Main Gun: {_mainGun.WeaponName}");
             float fireDelay = 60.0f / UnityEngine.Random.Range(_mainGun.RateOfFire.Min, _mainGun.RateOfFire.Max + 1);
 
             OnPrimaryWeaponFired?.Invoke(fireDelay);
@@ -69,7 +69,7 @@ namespace BattleGridUnity.Scripts.Vehicles.Ground
 
         private IEnumerator FireSecondaryArmament()
         {
-            Debug.Log($"Firing Secondary Gun: {_secondaryGun.WeaponName}");
+            // Debug.Log($"Firing Secondary Gun: {_secondaryGun.WeaponName}");
 
             float fireDelay = 60.0f / UnityEngine.Random.Range(_secondaryGun.RateOfFire.Min, _secondaryGun.RateOfFire.Max + 1);
 

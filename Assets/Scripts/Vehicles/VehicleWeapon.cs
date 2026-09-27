@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using BattleGridUnity.ScriptableObjects.Wepaons;
 using BattleGridUnity.Scripts.Vehicles.Ground;
 using DG.Tweening;
 using UnityEngine;
@@ -14,6 +15,8 @@ namespace BattleGridUnity.Scripts.Vehicles
 
     public class VehicleWeapon : MonoBehaviour
     {
+        public event Action OnWeaponFired;
+
         [SerializeField, Header("Armament Handler")]
         private ArmamentHandler _armamentHandler;
 
@@ -38,6 +41,8 @@ namespace BattleGridUnity.Scripts.Vehicles
 
         private Vector3 _orignalGunPosition;
 
+        public WeaponState Weapon { get; private set; }
+
 
 
         // Game Loop Methods-----------------------------------------------------------------------
@@ -56,10 +61,12 @@ namespace BattleGridUnity.Scripts.Vehicles
             if (_weaponClass == VehicleWeaponClass.Primary)
             {
                 _armamentHandler.OnPrimaryWeaponFired += FireWeapon;
+                Weapon = _armamentHandler.VehicleStats.MainGun;
             }
             else if (_weaponClass == VehicleWeaponClass.Secondary)
             {
                 _armamentHandler.OnSecondaryWeaponFired += FireWeapon;
+                Weapon = _armamentHandler.VehicleStats.SecondaryGun;
             }
         }
 
@@ -120,6 +127,7 @@ namespace BattleGridUnity.Scripts.Vehicles
         private void FireWeapon(float fireDelay)
         {
             PlayAudio();
+            OnWeaponFired?.Invoke();
 
             if (_weaponMesh == null)
             {
