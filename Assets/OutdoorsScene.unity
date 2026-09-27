@@ -4065,37 +4065,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 908497049648219107, guid: 57aea38f91c96344c934767a951ce240, type: 3}
   m_PrefabInstance: {fileID: 148137591}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1584857875
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1584857876}
-  m_Layer: 0
-  m_Name: Projectile
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1584857876
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1584857875}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1586738201
 GameObject:
   m_ObjectHideFlags: 0
@@ -4165,6 +4134,9 @@ MonoBehaviour:
   _fireSource: {fileID: 2252172460844045586}
   _firedAmmo: {fileID: 0}
   _weapon: {fileID: 0}
+  _isThisGunRecoilable: 0
+  _shell: {fileID: 0}
+  _recoilForce: 0
 --- !u!1 &1610016331
 GameObject:
   m_ObjectHideFlags: 0
@@ -5745,6 +5717,9 @@ MonoBehaviour:
   _fireSource: {fileID: 2252172460844045586}
   _firedAmmo: {fileID: 0}
   _weapon: {fileID: 0}
+  _isThisGunRecoilable: 1
+  _shell: {fileID: 0}
+  _recoilForce: 15000
 --- !u!33 &2985741861694529034
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6852,4 +6827,3 @@ SceneRoots:
   - {fileID: 6917621629505439025}
   - {fileID: 148137591}
   - {fileID: 2252172460844045585}
-  - {fileID: 1584857876}

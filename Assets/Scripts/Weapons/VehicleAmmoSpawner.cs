@@ -21,6 +21,15 @@ namespace BattleGridUnity.Scripts.Weapons
         [SerializeField]
         private WeaponState _weapon;
 
+        [SerializeField]
+        private bool _isThisGunRecoilable;
+
+        [SerializeField]
+        private Shell _shell;
+
+        [SerializeField]
+        private float _recoilForce;
+
 
 
 
@@ -28,12 +37,20 @@ namespace BattleGridUnity.Scripts.Weapons
 
         private void Start()
         {
-            _weapon = _vehicleWeapon.Weapon;
+            // _weapon = _vehicleWeapon.Weapon;
+
+            StartCoroutine(SetWeapon());
             _vehicleWeapon.OnWeaponFired += FireWeapon;
+
+            if (_isThisGunRecoilable)
+            {
+                _vehicleWeapon.OnWeaponFired += RecoilVehicle;
+            }
         }
 
         private void OnDestroy()
         {
+            _vehicleWeapon.OnWeaponFired -= FireWeapon;
             _vehicleWeapon.OnWeaponFired -= FireWeapon;
         }
 
@@ -43,11 +60,11 @@ namespace BattleGridUnity.Scripts.Weapons
         // Check this thing it might work it might not
         private IEnumerator SetWeapon()
         {
+            yield return new WaitUntil(() => _vehicleWeapon.Weapon != null);
             _weapon = _vehicleWeapon.Weapon;
-            yield return new WaitUntil(() => _weapon != null);
         }
 
-        public void AddRecoilForce(float recoilForce, Vector3 recoilDirection)
+        private void AddRecoilForce(float recoilForce, Vector3 recoilDirection)
         {
             _fireSource.AddForce(recoilForce * recoilDirection, ForceMode.Impulse);
         }
@@ -55,6 +72,11 @@ namespace BattleGridUnity.Scripts.Weapons
         public void FireWeapon()
         {
             Debug.Log($"Weapon Fired {_weapon.WeaponName}");
+        }
+
+        public void RecoilVehicle()
+        {
+            AddRecoilForce(_recoilForce, -transform.forward);
         }
     }
 }
