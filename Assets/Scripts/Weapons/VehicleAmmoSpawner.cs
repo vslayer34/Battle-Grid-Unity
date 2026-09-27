@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using BattleGridUnity.ScriptableObjects.Wepaons;
 using BattleGridUnity.Scripts.Vehicles;
 using BattleGridUnity.Scripts.Weapons.Ammo;
 using UnityEngine;
+using UnityEngine.VFX;
 
 namespace BattleGridUnity.Scripts.Weapons
 {
@@ -29,6 +31,10 @@ namespace BattleGridUnity.Scripts.Weapons
 
         [SerializeField]
         private float _recoilForce;
+        
+
+        [SerializeField]
+        private MuzzleEffectsHandler _effects;
 
 
 
@@ -46,12 +52,26 @@ namespace BattleGridUnity.Scripts.Weapons
             {
                 _vehicleWeapon.OnWeaponFired += RecoilVehicle;
             }
+            
+            if (_effects != null)
+            {
+                _vehicleWeapon.OnWeaponFired += _effects.FireVisualEffects;
+            }
         }
 
         private void OnDestroy()
         {
             _vehicleWeapon.OnWeaponFired -= FireWeapon;
-            _vehicleWeapon.OnWeaponFired -= FireWeapon;
+            
+            if (_isThisGunRecoilable)
+            {
+                _vehicleWeapon.OnWeaponFired -= RecoilVehicle;
+            }
+
+            if (_effects != null)
+            {
+                _vehicleWeapon.OnWeaponFired -= _effects.FireVisualEffects;
+            }
         }
 
         // Member Methods--------------------------------------------------------------------------
@@ -72,6 +92,13 @@ namespace BattleGridUnity.Scripts.Weapons
         public void FireWeapon()
         {
             Debug.Log($"Weapon Fired {_weapon.WeaponName}");
+
+            // int chance = UnityEngine.Random.Range(0, 5);
+
+            // if (chance <= 1)
+            // {
+            //     _muzzleFlash.Play();
+            // }
         }
 
         public void RecoilVehicle()
