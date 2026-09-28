@@ -93,6 +93,8 @@ namespace BattleGridUnity.Scripts.Weapons
         {
             Debug.Log($"Weapon Fired {_weapon.WeaponName}");
 
+            // Instantiate(_shell, )
+
             // int chance = UnityEngine.Random.Range(0, 5);
 
             // if (chance <= 1)
