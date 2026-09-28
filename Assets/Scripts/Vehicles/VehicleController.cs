@@ -22,11 +22,11 @@ namespace BattleGridUnity.Scripts.Vehicles
     public class VehicleController : MonoBehaviour
     {
         [SerializeField]
-        private GroundVehicleStats _vehicleStats;
+        protected GroundVehicleStats _vehicleStats;
 
 
         [SerializeField]
-        private GroundVehicleInput _groundInput;
+        protected GroundVehicleInput _groundInput;
 
         [SerializeField, Header("Wheels")]
         private List<WheelColliderAndMesh> _vehicleWheels = new List<WheelColliderAndMesh>();
@@ -82,8 +82,6 @@ namespace BattleGridUnity.Scripts.Vehicles
 
         private void MoveVehicleForward()
         {
-            float speed = 0.0f;
-
             // Calculate current speed along the forward axis
             float forwardSpeed = Vector3.Dot(transform.forward, _rigidBody.linearVelocity);
             float speedFactor = Mathf.InverseLerp(0, _vehicleStats.MaxForwardSpeed, Mathf.Abs(forwardSpeed));
@@ -93,9 +91,6 @@ namespace BattleGridUnity.Scripts.Vehicles
             float currentSteeringRange = Mathf.Lerp(_vehicleStats.SteeringRange, _vehicleStats.SteeringRangeAtMaxSpeed, speedFactor);
 
             bool isAccelerating = Mathf.Sign(_groundInput.MovementInputVector.y) == Mathf.Sign(forwardSpeed);
-
-            // Calculate the vehicle steering
-            TurnVehicle(currentSteeringRange);
 
             if (isAccelerating)
             {
@@ -124,6 +119,9 @@ namespace BattleGridUnity.Scripts.Vehicles
                 }
             }
 
+            // Calculate the vehicle steering
+            TurnVehicle(currentSteeringRange);
+
 
             // if (_groundInput.MovementInputVector.y != 0.0f)
             // {
@@ -148,12 +146,11 @@ namespace BattleGridUnity.Scripts.Vehicles
             foreach (var wheel in _vehicleWheels)
             {
                 wheel.Collider.GetWorldPose(out _wheelPosition, out _wheelRotation);
-                wheel.Mesh.position = _wheelPosition;
-                wheel.Mesh.rotation = _wheelRotation;
+                wheel.Mesh.SetPositionAndRotation(_wheelPosition, _wheelRotation);
             }
         }
 
-        private void TurnVehicle(float steeringRange)
+        protected virtual void TurnVehicle(float steeringRange)
         {
             // Calculate the vehicle steering
             foreach (var wheel in _steeringWheels)
@@ -171,7 +168,6 @@ namespace BattleGridUnity.Scripts.Vehicles
                 wheel.steerAngle = Mathf.Clamp(wheel.steerAngle, -_vehicleStats.SteeringRange, _vehicleStats.SteeringRange);
             }
         }
-
 
         // Signal Methods--------------------------------------------------------------------------
     }

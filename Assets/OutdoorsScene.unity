@@ -371,7 +371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7261270902252819701, guid: 57aea38f91c96344c934767a951ce240, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7498152995337447097, guid: 57aea38f91c96344c934767a951ce240, type: 3}
       propertyPath: m_Enabled
@@ -491,15 +491,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8688919098557026344, guid: 57aea38f91c96344c934767a951ce240, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.185455
+      value: 0.3999939
       objectReference: {fileID: 0}
     - target: {fileID: 8688919098557026344, guid: 57aea38f91c96344c934767a951ce240, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7037678
+      value: 1.6900005
       objectReference: {fileID: 0}
     - target: {fileID: 8688919098557026344, guid: 57aea38f91c96344c934767a951ce240, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.42392
+      value: -10.139999
       objectReference: {fileID: 0}
     - target: {fileID: 8751558798922686136, guid: 57aea38f91c96344c934767a951ce240, type: 3}
       propertyPath: m_IsActive
@@ -513,7 +513,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7737212213834233800, guid: 57aea38f91c96344c934767a951ce240, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 606855706991948477, guid: 57aea38f91c96344c934767a951ce240, type: 3}
@@ -526,6 +527,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1264284493}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7261270902252819701, guid: 57aea38f91c96344c934767a951ce240, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1199749314}
     - targetCorrespondingSourceObject: {fileID: 2662553747357402864, guid: 57aea38f91c96344c934767a951ce240, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1072799994}
@@ -2809,7 +2813,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172650628}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -2886,6 +2890,107 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
+--- !u!1 &1199749309 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7261270902252819701, guid: 57aea38f91c96344c934767a951ce240, type: 3}
+  m_PrefabInstance: {fileID: 148137591}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1199749310 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 939305124072519285, guid: 57aea38f91c96344c934767a951ce240, type: 3}
+  m_PrefabInstance: {fileID: 148137591}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1199749311 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7447234224762005460, guid: 57aea38f91c96344c934767a951ce240, type: 3}
+  m_PrefabInstance: {fileID: 148137591}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1199749312 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4491191030426608789, guid: 57aea38f91c96344c934767a951ce240, type: 3}
+  m_PrefabInstance: {fileID: 148137591}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199749309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26c1c2f707d87674ca4e27954acc02df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GroundVehicleInput
+--- !u!54 &1199749313 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 1197790438400727444, guid: 57aea38f91c96344c934767a951ce240, type: 3}
+  m_PrefabInstance: {fileID: 148137591}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1199749314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199749309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942790e6a5d470a41a0c30c9c6472538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Vehicles.TrackedVehicleController
+  _vehicleStats: {fileID: 11400000, guid: 1811686edd28c7f42b53bbb67fc513b4, type: 2}
+  _groundInput: {fileID: 1199749312}
+  _vehicleWheels:
+  - <Collider>k__BackingField: {fileID: 889919935}
+    <Mesh>k__BackingField: {fileID: 1037245679}
+  - <Collider>k__BackingField: {fileID: 1610016333}
+    <Mesh>k__BackingField: {fileID: 25401958}
+  - <Collider>k__BackingField: {fileID: 449282978}
+    <Mesh>k__BackingField: {fileID: 1699900194}
+  - <Collider>k__BackingField: {fileID: 591483499}
+    <Mesh>k__BackingField: {fileID: 1496191524}
+  - <Collider>k__BackingField: {fileID: 801684461}
+    <Mesh>k__BackingField: {fileID: 1037245675}
+  - <Collider>k__BackingField: {fileID: 1839532595}
+    <Mesh>k__BackingField: {fileID: 2077223724}
+  - <Collider>k__BackingField: {fileID: 810078358}
+    <Mesh>k__BackingField: {fileID: 1072799990}
+  - <Collider>k__BackingField: {fileID: 1838291230}
+    <Mesh>k__BackingField: {fileID: 1395578572}
+  - <Collider>k__BackingField: {fileID: 1930442726}
+    <Mesh>k__BackingField: {fileID: 978381170}
+  - <Collider>k__BackingField: {fileID: 1293920789}
+    <Mesh>k__BackingField: {fileID: 1414917620}
+  - <Collider>k__BackingField: {fileID: 433626091}
+    <Mesh>k__BackingField: {fileID: 936083205}
+  - <Collider>k__BackingField: {fileID: 1450773672}
+    <Mesh>k__BackingField: {fileID: 53303136}
+  _driveWheels:
+  - {fileID: 889919935}
+  - {fileID: 1610016333}
+  - {fileID: 449282978}
+  - {fileID: 591483499}
+  - {fileID: 801684461}
+  - {fileID: 1839532595}
+  - {fileID: 810078358}
+  - {fileID: 1838291230}
+  - {fileID: 1930442726}
+  - {fileID: 1293920789}
+  - {fileID: 433626091}
+  - {fileID: 1450773672}
+  _steeringWheels: []
+  _turret: {fileID: 1199749311}
+  _mantlet: {fileID: 1199749310}
+  _rigidBody: {fileID: 1199749313}
+  _rightSteeringWheels:
+  - {fileID: 889919935}
+  - {fileID: 1610016333}
+  - {fileID: 449282978}
+  - {fileID: 591483499}
+  - {fileID: 801684461}
+  - {fileID: 1839532595}
+  _lefttSteeringWheels:
+  - {fileID: 810078358}
+  - {fileID: 1838291230}
+  - {fileID: 1930442726}
+  - {fileID: 1293920789}
+  - {fileID: 433626091}
+  - {fileID: 1450773672}
 --- !u!1 &1264203867
 GameObject:
   m_ObjectHideFlags: 0
@@ -4637,7 +4742,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1836141702}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -5539,7 +5644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1539964143067892177
 MeshRenderer:
   m_ObjectHideFlags: 0
