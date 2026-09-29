@@ -5,8 +5,14 @@ namespace BattleGridUnity.Scripts.Weapons.Ammo
 {
     public class Shell : Projectile
     {
+        // [SerializeField]
+        // private float _recoilForce;
+
         [SerializeField]
-        private float _recoilForce;
+        protected Rigidbody _rigidBody;
+
+        [SerializeField]
+        protected float _projectileSpeed = 10.0f;
 
 
 
@@ -14,9 +20,14 @@ namespace BattleGridUnity.Scripts.Weapons.Ammo
 
         private void OnEnable()
         {
-            
+            MoveForward();
         }
 
         // Member Methods--------------------------------------------------------------------------
+
+        protected virtual void MoveForward()
+        {
+            _rigidBody.AddForce(_projectileSpeed * transform.forward, ForceMode.Force);
+        }
     }
 }
