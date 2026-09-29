@@ -19,6 +19,9 @@ namespace BattleGridUnity.Scripts.Weapons
         [SerializeField]
         private Projectile _firedAmmo;
 
+        [SerializeField]
+        private Transform _firePoint;
+
 
         [SerializeField]
         private WeaponState _weapon;
@@ -92,6 +95,11 @@ namespace BattleGridUnity.Scripts.Weapons
         public void FireWeapon()
         {
             Debug.Log($"Weapon Fired {_weapon.WeaponName}");
+
+            var shell = Instantiate(_firedAmmo, _firePoint) as Shell;
+            shell.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+            shell.transform.SetParent(null);
+            shell.gameObject.SetActive(true);
 
             // Instantiate(_shell, )
 

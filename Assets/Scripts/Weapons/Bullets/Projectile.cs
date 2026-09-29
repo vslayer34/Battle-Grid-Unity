@@ -12,6 +12,9 @@ namespace BattleGridUnity.Scripts.Weapons.Ammo
         [field: SerializeField]
         public VehicleAmmoSpawner FireSource { get; protected set; }
 
+        [SerializeField]
+        protected LayerMask _groundLayerMask;
+
 
 
         // Game Loop Methods-----------------------------------------------------------------------
