@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6980674808752865744}
   - component: {fileID: 9112262523659184810}
   m_Layer: 0
-  m_Name: 2A42 Shell
+  m_Name: 2A42 Shell Casing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4171709782463113946
 Transform:
   m_ObjectHideFlags: 0
@@ -199,7 +199,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775033604093539392}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -302,37 +302,17 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -7774114610007952158, guid: ff4350c6fb77c3940a044e726f79850c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.1809
-      objectReference: {fileID: 0}
-    - target: {fileID: -4994448457993300506, guid: ff4350c6fb77c3940a044e726f79850c, type: 3}
+    - target: {fileID: -2819141936452349929, guid: ff4350c6fb77c3940a044e726f79850c, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -2927500368405006877, guid: ff4350c6fb77c3940a044e726f79850c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.4238093
-      objectReference: {fileID: 0}
-    - target: {fileID: -2927500368405006877, guid: ff4350c6fb77c3940a044e726f79850c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.4238093
-      objectReference: {fileID: 0}
-    - target: {fileID: -2927500368405006877, guid: ff4350c6fb77c3940a044e726f79850c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4238093
-      objectReference: {fileID: 0}
-    - target: {fileID: -2927500368405006877, guid: ff4350c6fb77c3940a044e726f79850c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.1818
+    - target: {fileID: -2580174536433878464, guid: ff4350c6fb77c3940a044e726f79850c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ff4350c6fb77c3940a044e726f79850c, type: 3}
       propertyPath: m_Name
       value: 2A42 Shell
-      objectReference: {fileID: 0}
-    - target: {fileID: 3263996148592507470, guid: ff4350c6fb77c3940a044e726f79850c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -367,9 +347,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.0225
-  m_Height: 0.1
+  m_Height: 0.19
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0.048}
+  m_Center: {x: 0, y: 0, z: 0.1}
 --- !u!4 &7669059046017696093 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ff4350c6fb77c3940a044e726f79850c, type: 3}

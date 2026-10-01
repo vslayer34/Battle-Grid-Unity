@@ -1,9 +1,9 @@
 using BattleGridUnity.Scripts.Utils;
-using UnityEngine.VFX;
+using UnityEngine;
 
-namespace BattleGridUnity.Scripts.World
+namespace BattleGridUnity.Scripts.Weapons.Ammo
 {
-    public class VisualEffectsPool : GeneralObjectPool
+    public class AmmoPool : GeneralObjectPool
     {
         // Game Loop Methods---------------------------------------------------------------------------
 
@@ -14,12 +14,12 @@ namespace BattleGridUnity.Scripts.World
     
         // Member Methods------------------------------------------------------------------------------
 
-        public VisualEffect GetItem()
+        public Projectile GetItem()
         {
-            return GameObjectPool.Get().GetComponent<VisualEffect>();
+            return GameObjectPool.Get().GetComponent<Projectile>();
         }
 
-        public void ReleaseItem(VisualEffect effect)
+        public void ReleaseItem(Projectile effect)
         {
             GameObjectPool.Release(effect.gameObject);
         }

@@ -348,6 +348,53 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!1 &105714950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 105714951}
+  - component: {fileID: 105714952}
+  m_Layer: 0
+  m_Name: 30 mm AutoCannon Shell
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &105714951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105714950}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 682394942}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &105714952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105714950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0547b6a2a6868ba4a9481ba2944cfaf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Weapons.Ammo.AmmoPool
+  _poolDefaultSize: 10
+  _poolMaxSize: 60
+  _poolObject: {fileID: 666445714544540848, guid: cae814b88cae3a841a176a7e7c45cc34, type: 3}
 --- !u!1001 &148137591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1270,6 +1317,53 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!1 &318226719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 318226720}
+  - component: {fileID: 318226721}
+  m_Layer: 0
+  m_Name: Terrain Hit Collisions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &318226720
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318226719}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1419759017}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &318226721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318226719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 137ad069d5aa89d4389b1ae2b3ad3ede, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.World.VisualEffectsPool
+  _poolDefaultSize: 10
+  _poolMaxSize: 60
+  _poolObject: {fileID: 2571294021862713798, guid: 512c691b77c526745bca3166323b954b, type: 3}
 --- !u!4 &408730893 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6064674550626700632, guid: 57aea38f91c96344c934767a951ce240, type: 3}
@@ -1782,6 +1876,39 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &682394941
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 682394942}
+  m_Layer: 0
+  m_Name: Ammo Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &682394942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682394941}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 105714951}
+  - {fileID: 1309806788}
+  m_Father: {fileID: 1419759017}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &728712907
 GameObject:
   m_ObjectHideFlags: 0
@@ -4211,6 +4338,53 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!1 &1309806787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1309806788}
+  - component: {fileID: 1309806789}
+  m_Layer: 0
+  m_Name: 30 mm AutoCannon Casing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1309806788
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309806787}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 682394942}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1309806789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309806787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0547b6a2a6868ba4a9481ba2944cfaf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.Weapons.Ammo.AmmoPool
+  _poolDefaultSize: 10
+  _poolMaxSize: 60
+  _poolObject: {fileID: 666445714544540848, guid: 3221f62e3444dbb4abb08dae5ed3b130, type: 3}
 --- !u!1 &1395578571 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1169629518889178654, guid: 57aea38f91c96344c934767a951ce240, type: 3}
@@ -4287,7 +4461,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 318226720}
+  - {fileID: 682394942}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1420261130
@@ -4574,10 +4750,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f1d3adf70b4dbb4f85378ea7c047afc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AmmoSpawner
+  _ammoPool: {fileID: 0}
+  _casingPool: {fileID: 0}
   _vehicleWeapon: {fileID: 1586738203}
   _fireSource: {fileID: 2252172460844045586}
   _firedAmmo: {fileID: 0}
   _firePoint: {fileID: 0}
+  _shellCasingThrowPoint: {fileID: 0}
   _weapon: {fileID: 0}
   _isThisGunRecoilable: 0
   _shell: {fileID: 0}
@@ -4923,6 +5102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7efcdb9dff51d954b96f254a33a2bb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleGridUnity.Scripts.World.TerrainCollisions
+  _effectsPool: {fileID: 318226721}
 --- !u!1 &1836141702
 GameObject:
   m_ObjectHideFlags: 0
@@ -6363,13 +6543,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f1d3adf70b4dbb4f85378ea7c047afc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AmmoSpawner
+  _ammoPool: {fileID: 105714952}
+  _casingPool: {fileID: 1309806789}
   _vehicleWeapon: {fileID: 4653616900371526337}
   _fireSource: {fileID: 2252172460844045586}
   _firedAmmo: {fileID: 6980674808752865744, guid: cae814b88cae3a841a176a7e7c45cc34, type: 3}
   _firePoint: {fileID: 2127616501}
+  _shellCasingThrowPoint: {fileID: 0}
   _weapon: {fileID: 11400000, guid: ce60639431f3dbe41980483d857ab086, type: 2}
   _isThisGunRecoilable: 1
-  _shell: {fileID: 0}
+  _shell: {fileID: 6980674808752865744, guid: cae814b88cae3a841a176a7e7c45cc34, type: 3}
   _recoilForce: 15000
   _effects: {fileID: 2836799128507508888}
 --- !u!114 &2836799128507508888
@@ -7092,6 +7275,22 @@ PrefabInstance:
     - target: {fileID: 666445714544540848, guid: cae814b88cae3a841a176a7e7c45cc34, type: 3}
       propertyPath: m_Name
       value: 2A42 Shell
+      objectReference: {fileID: 0}
+    - target: {fileID: 666445714544540848, guid: cae814b88cae3a841a176a7e7c45cc34, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659900533984042232, guid: cae814b88cae3a841a176a7e7c45cc34, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5891540013606415925, guid: cae814b88cae3a841a176a7e7c45cc34, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293611679747093328, guid: cae814b88cae3a841a176a7e7c45cc34, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6919865073576812013, guid: cae814b88cae3a841a176a7e7c45cc34, type: 3}
       propertyPath: m_LocalPosition.x

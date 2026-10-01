@@ -29,18 +29,18 @@ namespace BattleGridUnity.Scripts.Weapons.Ammo
 
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.layer == _groundLayerMask)
-            {
-                Debug.Log("Ground Hit");
-                _groundHit.transform.SetParent(null);
-                _groundHit.transform.position = collision.GetContact(0).point;
-                _groundHit.Play();
-            }
+            // if (collision.gameObject.layer == _groundLayerMask)
+            // {
+            //     Debug.Log("Ground Hit");
+            //     _groundHit.transform.SetParent(null);
+            //     _groundHit.transform.position = collision.GetContact(0).point;
+            //     _groundHit.Play();
+            // }
         }
 
         // Member Methods--------------------------------------------------------------------------
 
-        protected virtual void MoveForward()
+        protected override void MoveForward()
         {
             _rigidBody.AddForce(_projectileSpeed * transform.forward, ForceMode.Impulse);
         }

@@ -21,5 +21,7 @@ namespace BattleGridUnity.Scripts.Weapons.Ammo
 
         // Member Methods--------------------------------------------------------------------------
 
+        protected virtual void MoveForward() { }
+
     }
 }
